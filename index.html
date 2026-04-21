@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Everis acquires profitable apps and SaaS from founders ready for what's next. Founded by the team behind Time Doctor and Running Remote." />
+<meta name="description" content="Everis acquires profitable apps and SaaS from founders ready for what's next." />
 <meta property="og:title" content="Everis" />
-<meta property="og:description" content="We buy software worth keeping. Then we help it keep going." />
+<meta property="og:description" content="We acquire and grow exceptional SaaS companies. From founder-led innovation to enterprise-grade growth." />
 <title>Everis. Acquirer of apps and SaaS businesses.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +19,7 @@
 :root {
   /* Palette — Teal Edition */
   --bone:          #EAF4F1;
-  --bone-warm:     #D4ECE6;
+  --bone-warm:     #B9D7CF;
   --bone-deep:     #BAE0D8;
   --forest:        #1A3240;
   --forest-soft:   #214252;
@@ -41,9 +41,14 @@
 
   /* Layout */
   --container: 1360px;
-  --gutter: clamp(1.5rem, 4vw, 4rem);
-  --section-y: clamp(3.5rem, 7vw, 5.5rem);
-  --nav-h: 60px;
+  --gutter: clamp(1.75rem, 4.5vw, 4.5rem);
+  --section-y: clamp(4rem, 8vw, 6rem);
+  --nav-h: 64px;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2.5rem;
+  --spacing-xl: 4rem;
 }
 
 /* Reset */
@@ -62,11 +67,12 @@ body {
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: 16px;
-  line-height: 1.55;
-  font-weight: 400;
+  line-height: 1.62;
+  font-weight: 410;
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
+  letter-spacing: 0.002em;
 }
 
 /* Paper grain overlay */
@@ -74,7 +80,7 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08 0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.04 0 0 0 0 0.08 0 0 0 0 0.16 0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   opacity: 0.055;
   mix-blend-mode: multiply;
   pointer-events: none;
@@ -226,6 +232,25 @@ nav.top .container {
 }
 .wordmark-period {
   color: var(--brass);
+}
+
+/* Disable all animations and transitions for logo elements */
+.wordmark,
+.wordmark *,
+.wordmark:hover,
+.wordmark:focus-visible,
+.wordmark em,
+.wordmark em:hover,
+.wordmark em:focus-visible,
+.nav-logomark,
+.nav-logomark:hover,
+.nav-logomark:focus-visible,
+.wordmark img,
+.wordmark img:hover,
+.wordmark img:focus-visible {
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
 }
 
 .nav-links {
@@ -433,7 +458,7 @@ nav.top .container {
    ======================================================= */
 
 .hero {
-  padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(3rem, 7vw, 5rem) 0 clamp(1.8rem, 3.6vw, 2.7rem);
   position: relative;
 }
 
@@ -447,14 +472,14 @@ nav.top .container {
 
 .hero-headline {
   font-family: var(--font-serif);
-  font-variation-settings: 'SOFT' 30, 'opsz' 144;
-  font-weight: 350;
-  font-size: clamp(2.5rem, 6.5vw, 6rem);
-  line-height: 0.98;
-  letter-spacing: -0.035em;
-  margin-bottom: 1.5rem;
+  font-variation-settings: 'SOFT' 25, 'opsz' 144;
+  font-weight: 320;
+  font-size: clamp(2.75rem, 7vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.018em;
+  margin-bottom: 2rem;
   color: var(--ink);
-  max-width: 16ch;
+  max-width: 15ch;
 }
 
 .hero-headline em {
@@ -462,19 +487,21 @@ nav.top .container {
 }
 
 .hero-sub {
-  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
-  line-height: 1.5;
+  font-size: clamp(1.1rem, 1.45vw, 1.25rem);
+  line-height: 1.62;
   color: var(--ink-soft);
-  margin-bottom: 1.75rem;
-  font-weight: 400;
-  max-width: 58ch;
+  margin-bottom: 2.25rem;
+  font-weight: 390;
+  max-width: 54ch;
+  letter-spacing: -0.005em;
 }
 
 .hero-ctas {
   display: flex;
-  gap: 0.7rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 1.75rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
   position: relative;
   overflow: visible;
 }
@@ -484,7 +511,7 @@ nav.top .container {
   position: absolute;
   left: 0;
   right: 0;
-  top: -1.15rem;
+  top: -1.28rem;
   height: 1px;
   background: rgba(15,24,20,0.09);
   z-index: 0;
@@ -1932,7 +1959,7 @@ span.label::before {
   --brass-bright:  #22A07F;
   --brass-soft:    #1D9474;
   --section-accent-bg: #CCE7F0;
-  --surf-hero:     #E2F0EE;
+  --surf-hero:     #D8E8F2;
   --surf-criteria: #D3E9F0;
   --surf-why:      #1A3240;
   --surf-process:  #EAF5F2;
@@ -2213,6 +2240,124 @@ span.label::before {
   .hero-bg::before,
   .hero-bg::after { animation: none !important; }
 }
+
+/* ─ Force disable ALL logo animations and transitions ───────────── */
+nav.top .wordmark,
+nav.top .wordmark *,
+nav.top .wordmark:hover,
+nav.top .wordmark:focus-visible,
+nav.top .wordmark em,
+nav.top .wordmark em:hover,
+nav.top .wordmark em:focus-visible,
+nav.top .nav-logomark,
+nav.top .nav-logomark:hover,
+nav.top .nav-logomark:focus-visible,
+nav.top .wordmark img,
+nav.top .wordmark img:hover,
+nav.top .wordmark img:focus-visible,
+a.wordmark,
+a.wordmark *,
+a.wordmark:hover,
+a.wordmark:focus-visible,
+a.wordmark em,
+a.wordmark em:hover,
+a.wordmark em:focus-visible,
+a.wordmark img,
+a.wordmark img:hover,
+a.wordmark img:focus-visible {
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -ms-animation: none !important;
+  -o-animation: none !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  -o-transform: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  backface-visibility: hidden !important;
+  perspective: none !important;
+  transform-style: flat !important;
+  will-change: auto !important;
+  scale: 1 !important;
+  translate: 0 !important;
+  rotate: 0 !important;
+}
+
+/* ── Clean Logo Styling ───────────────────────────────────────────── */
+.logo-container,
+.logo-container *,
+.logo-container::before,
+.logo-container::after {
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -ms-animation: none !important;
+  -o-animation: none !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  -o-transform: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  backface-visibility: hidden !important;
+  perspective: none !important;
+  transform-style: flat !important;
+  will-change: auto !important;
+}
+
+.logo-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-text {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--text);
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.logo-italic {
+  font-style: italic;
+  color: #278788;
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.logo-period {
+  color: var(--accent);
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.logo-image {
+  height: 1.215rem;
+  width: auto;
+  display: block;
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 /* ═══════════════════════════════════════════════════════════════════
    TEAL ELEVATION LAYER — Gradients, depth, geometric accents
    ═══════════════════════════════════════════════════════════════════ */
@@ -2222,11 +2367,22 @@ body {
   background: linear-gradient(160deg, var(--surf-hero) 0%, #dff0ee 100%);
 }
 
-/* ── Nav: teal-tinted glassmorphism ── */
+/* ── Nav: match hero background ── */
 nav.top {
-  background: rgba(222, 238, 236, 0.95) !important;
+  background: linear-gradient(160deg, var(--surf-hero) 0%, #dff0ee 100%) !important;
   border-top: none !important;
+  position: relative;
 }
+
+nav.top::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(13,31,26,0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+
 nav.top.scrolled {
   background: rgba(222, 238, 236, 0.99) !important;
   box-shadow: 0 1px 0 var(--brass), 0 10px 40px -8px rgba(13,31,26,0.1) !important;
@@ -2330,6 +2486,14 @@ footer {
   animation: none !important;
   transform: none !important;
   transition: none !important;
+}
+.nav-logomark,
+.nav-logomark:hover,
+.nav-logomark:focus-visible {
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+}
 }
 
 /* ── Section divider: teal rule gradient ── */
@@ -2447,17 +2611,17 @@ section.page {
 }
 
 .doodle-hero {
-  width: clamp(260px, 22vw, 380px);
+  width: clamp(218px, 18.5vw, 319px);
   right: clamp(4rem, 8vw, 9rem);
-  bottom: calc(1.5rem + 1.25rem + 1.2rem + 1.75rem + 1.15rem + 1.5rem);
-  z-index: 1;
+  bottom: calc(1.5rem + 1.25rem + 1.2rem + 1.75rem + 1.15rem + 1.5rem - 22px);
+  z-index: 0;
   pointer-events: none;
 }
 
 .doodle-what-do {
   width: clamp(220px, 17vw, 276px);
   left: clamp(3.8rem, 5vw, 4.9rem);
-  bottom: -5.4rem;
+  bottom: -6.2rem;
   z-index: 1;
 }
 
@@ -2472,7 +2636,7 @@ section.page {
 .doodle-why {
   width: clamp(176px, 14vw, 220px);
   left: -13px;
-  top: clamp(14.2rem, 19vw, 15.6rem);
+  top: clamp(14.7rem, 19.5vw, 16.1rem);
   bottom: auto;
   z-index: 0;
   opacity: 1;
@@ -2482,7 +2646,7 @@ section.page {
   width: clamp(224px, 18vw, 284px);
   left: auto;
   right: clamp(1.6rem, 3.8vw, 3rem);
-  bottom: -1px;
+  bottom: -16px;
   transform: translateY(25%);
   transform-origin: bottom right;
   z-index: 1;
@@ -2542,25 +2706,26 @@ section.page {
 
 @media (max-width: 880px) {
   .doodle-hero {
-    width: 190px;
-    right: 1.6rem;
-    bottom: calc(100% + 1rem);
-    opacity: 0.9;
+    width: 106px;
+    right: 0.8rem;
+    bottom: calc(100% - 112px);
+    opacity: 0.85;
   }
 
   .doodle-what-do {
     width: 180px;
     left: 2.4rem;
     right: auto;
-    bottom: -3.6rem;
+    bottom: -4.1rem;
   }
 
   .doodle-why {
-    width: 154px;
-    left: -8px;
-    top: 12.5rem;
+    width: 126px;
+    left: -4px;
+    top: 12.25rem;
     bottom: auto;
     opacity: 1;
+    padding-bottom: 0;
   }
 
   .doodle-criteria {
@@ -2614,6 +2779,151 @@ section.page {
 }
 
 
+/* ═══════════════════════════════════════════════════════════════════
+   NEUE HAAS GROTESK + NAV LOGOMARK + DOODLE UNIT + DIVIDER
+   ═══════════════════════════════════════════════════════════════════ */
+:root {
+  --font-display: 'NeueHaasGroteskDisplayPro', 'Neue Haas Grotesk Display Pro', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Headings → Neue Haas Grotesk Bold */
+h1, h2, h3, h4,
+.hero-headline,
+.page-title,
+.final-cta-headline,
+.founder-name,
+.claim-phrase,
+.faq-q {
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  font-variation-settings: normal !important;
+  letter-spacing: -0.018em !important;
+}
+
+/* True italic variant for already-italicised words in headings */
+h1 em, h2 em, h3 em, h4 em,
+.hero-headline em,
+.page-title em,
+.final-cta-headline em,
+.claim-phrase em {
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  font-style: italic !important;
+}
+
+/* Headings: 10% smaller */
+.hero-headline {
+  font-size: clamp(2.25rem, 5.85vw, 5.4rem) !important;
+  letter-spacing: -0.028em !important;
+  line-height: 1.0 !important;
+}
+
+.page-title {
+  font-size: clamp(1.575rem, 3.15vw, 2.475rem) !important;
+  letter-spacing: -0.018em !important;
+  line-height: 1.05 !important;
+}
+
+.final-cta-headline {
+  font-size: clamp(2.25rem, 5.4vw, 4.5rem) !important;
+  letter-spacing: -0.025em !important;
+}
+
+/* Hero subheading: desktop only, slightly wider so it sits on two lines */
+@media (min-width: 881px) {
+  .hero-sub {
+    font-size: 18px !important;
+    max-width: 72ch !important;
+  }
+}
+
+/* Nav logomark */
+.wordmark {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.nav-logomark {
+  display: inline-block;
+  height: 1em;
+  width: auto;
+  vertical-align: middle;
+  margin-left: 0.4em;
+  flex-shrink: 0;
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Doodle sits on the hero-signature border-top line — bottom set via JS measurement */
+.hero-signature {
+  position: relative;
+  overflow: visible;
+}
+
+.doodle-hero {
+  position: absolute !important;
+  right: clamp(4rem, 8vw, 9rem) !important;
+  width: clamp(218px, 18.5vw, 319px) !important;
+  bottom: calc(1.5rem + 1.25rem + 1.2rem + 1.75rem + 1.15rem + 1.5rem - 146px) !important;
+}
+
+/* Apps & SaaS positioning near doodle hand */
+.hero-eyebrow {
+  position: absolute;
+  top: 88px;
+  right: 110px;
+  z-index: 10;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6B7280;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Section 2 (What We Do): thin divider line matching hero line style */
+.what-do {
+  border-top: none !important;
+  background: linear-gradient(180deg, rgba(184,220,212,0.8) 0%, rgba(184,220,212,0.6) 100%) !important;
+}
+
+@media (max-width: 880px) {
+  .hero-signature .doodle-hero {
+    width: 160px !important;
+    right: 1.6rem !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-signature .doodle-hero {
+    display: none !important;
+  }
+}
+
+/* ── SEAMLESS NAV + SOLID HERO ── */
+nav.top {
+  position: sticky !important;
+  top: 0 !important;
+  background: #c8e4e7 !important;
+  border-bottom: 1px solid transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+nav.top.scrolled {
+  background: #c8e4e7 !important;
+  box-shadow: none !important;
+}
+.hero {
+  background: #c8e4e7 !important;
+}
+.hero-bg,
+.hero::before,
+.hero::after {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 </style>
 </head>
 <body>
@@ -2622,7 +2932,10 @@ section.page {
 
 <nav class="top">
   <div class="container">
-    <a href="https://everis.ai" class="wordmark" aria-label="Everis">Ever<em>is</em><span class="wordmark-period">.</span></a>
+    <div class="logo-container">
+  <span class="logo-text">Ever<em class="logo-italic">is</em><span class="logo-period">.</span></span>
+  <img src="assets/everis%20logo.png" class="logo-image" alt="" aria-hidden="true">
+</div>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="acquisitions.html">Acquisitions</a></li>
@@ -2642,19 +2955,21 @@ section.page {
     <div class="container">
       <div class="hero-meta reveal">
         <span class="edition-num">EV / 2026 / 01</span>
-        <span class="edition-num">Apps &amp; SaaS</span>
       </div>
+      <div class="hero-eyebrow reveal">Apps &amp; SaaS</div>
 
       <h1 class="hero-headline reveal">
-        We buy software<br />
-        worth <em>keeping</em>.<br />
-        Then we help it<br />
-        keep going.
+        We acquire and<br />
+        scale <em>exceptional</em><br />
+        SaaS companies.
       </h1>
 
-      <p class="hero-sub reveal">
-        Everis acquires profitable apps and SaaS from founders ready for what's next. Your brand stays. Your team stays if they want to. We hold for the long term, not the next quarter.
-      </p>
+      <div class="hero-body reveal">
+        <p class="what-do-lead">
+          Built by founders, for founders. We understand what you've built because we've<br />
+          built it too. Your team stays if they want to. We're in this for the long run.
+        </p>
+      </div>
 
       <div class="hero-ctas reveal">
         <a href="contact.html?reason=sell" class="btn btn-primary">Sell your business</a>
@@ -2665,7 +2980,6 @@ section.page {
 
       <div class="hero-signature reveal">
         <span class="credit">
-          Founded by the team behind <strong>Time Doctor</strong> and <strong>Running Remote</strong>.
         </span>
       </div>
     </div>
@@ -2685,7 +2999,7 @@ section.page {
 
       <div class="what-do-body reveal">
         <p class="what-do-lead">
-          We acquire profitable apps and SaaS and run them ourselves. <span class="emphasis">Not a turnaround shop. Not a rollup.</span> A small team of operators who have shipped, scaled, and sold software, now buying the kinds of products we used to build.
+          We acquire profitable apps and SaaS and run them ourselves. <span class="emphasis">Not consultants. Not a rollup fund.</span> We're operators who've actually built, scaled, and sold software. Now we're buying the kinds of products we used to build.
         </p>
       </div>
 
@@ -2732,7 +3046,7 @@ section.page {
           <div class="claim-number">10+<span class="unit">Years</span></div>
           <h3 class="claim-phrase">We hold. We do <em>not</em> flip.</h3>
           <p class="claim-body">
-            We acquire for long-term ownership, not a three-year exit window. We are building the kind of firm we wish had existed when we were thinking about selling Time Doctor.
+            We acquire to hold, not to flip. We're building the firm we wished existed when we were selling Time Doctor.
           </p>
         </article>
       </div>
@@ -2884,9 +3198,6 @@ section.page {
     </div>
   </div>
 
-  <div class="wordmark-giant-wrap">
-    <span class="wordmark-giant" aria-hidden="true">Ever<em>is</em><span class="wordmark-period">.</span></span>
-  </div>
 </footer>
 
 <script>
@@ -2912,6 +3223,14 @@ section.page {
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+  // Immediately reveal elements already in the viewport on load (so page is never blank)
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.in-view)').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight + 100) el.classList.add('in-view');
+    });
+  }, 0);
+
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   navToggle.addEventListener('click', () => {
@@ -2924,6 +3243,26 @@ section.page {
   const _onScroll = () => _nav.classList.toggle('scrolled', window.scrollY > 20);
   window.addEventListener('scroll', _onScroll, { passive: true });
   _onScroll();
+
+  // Anchor hero doodle to the divider line above hero-ctas (.hero-ctas::before)
+  (function() {
+    const doodle = document.querySelector('.doodle-hero');
+    const ctas = document.querySelector('.hero-ctas');
+    const container = document.querySelector('.hero .container');
+    if (!doodle || !ctas || !container) return;
+    function pin() {
+      const ctasRect = ctas.getBoundingClientRect();
+      const cRect   = container.getBoundingClientRect();
+      
+      // Get the ACTUAL ::before top value from CSS
+      const beforeStyles = window.getComputedStyle(ctas, '::before');
+      const lineOffset = parseFloat(beforeStyles.top); // will be negative (e.g. -18.4)
+      
+      doodle.style.setProperty('bottom', (cRect.bottom - (ctasRect.top + lineOffset) + 17) + 'px', 'important');
+    }
+    setTimeout(pin, 50);
+    window.addEventListener('resize', pin);
+  })();
 
   // FAQ accordion — open first item by default
   document.querySelectorAll('.faq-item').forEach((item, i) => {

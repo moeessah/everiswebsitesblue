@@ -39,9 +39,14 @@
 
   /* Layout */
   --container: 1360px;
-  --gutter: clamp(1.5rem, 4vw, 4rem);
-  --section-y: clamp(3.5rem, 7vw, 5.5rem);
-  --nav-h: 60px;
+  --gutter: clamp(1.75rem, 4.5vw, 4.5rem);
+  --section-y: clamp(4rem, 8vw, 6rem);
+  --nav-h: 64px;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2.5rem;
+  --spacing-xl: 4rem;
 }
 
 /* Reset */
@@ -60,11 +65,12 @@ body {
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: 16px;
-  line-height: 1.55;
-  font-weight: 400;
+  line-height: 1.62;
+  font-weight: 410;
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
+  letter-spacing: 0.002em;
 }
 
 /* Paper grain overlay */
@@ -72,7 +78,7 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08 0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.04 0 0 0 0 0.08 0 0 0 0 0.16 0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   opacity: 0.055;
   mix-blend-mode: multiply;
   pointer-events: none;
@@ -224,6 +230,25 @@ nav.top .container {
 }
 .wordmark-period {
   color: var(--brass);
+}
+
+/* Disable all animations and transitions for logo elements */
+.wordmark,
+.wordmark *,
+.wordmark:hover,
+.wordmark:focus-visible,
+.wordmark em,
+.wordmark em:hover,
+.wordmark em:focus-visible,
+.nav-logomark,
+.nav-logomark:hover,
+.nav-logomark:focus-visible,
+.wordmark img,
+.wordmark img:hover,
+.wordmark img:focus-visible {
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
 }
 
 .nav-links {
@@ -431,7 +456,7 @@ nav.top .container {
    ======================================================= */
 
 .hero {
-  padding: clamp(2.5rem, 6vw, 4.5rem) 0 0.5rem;
+  padding: clamp(3rem, 7vw, 5rem) 0 clamp(1.5rem, 3vw, 2.25rem);
   position: relative;
 }
 
@@ -445,14 +470,14 @@ nav.top .container {
 
 .hero-headline {
   font-family: var(--font-serif);
-  font-variation-settings: 'SOFT' 30, 'opsz' 144;
-  font-weight: 350;
-  font-size: clamp(2.5rem, 6.5vw, 6rem);
-  line-height: 0.98;
-  letter-spacing: -0.035em;
-  margin-bottom: 1.5rem;
+  font-variation-settings: 'SOFT' 25, 'opsz' 144;
+  font-weight: 320;
+  font-size: clamp(2.75rem, 7vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.018em;
+  margin-bottom: 2rem;
   color: var(--ink);
-  max-width: 16ch;
+  max-width: 15ch;
 }
 
 .hero-headline em {
@@ -1403,6 +1428,22 @@ footer {
   border-color: var(--brass);
 }
 
+.contact-image {
+  position: absolute;
+  right: 60px;
+  top: calc(50% + 42px);
+  transform: translateY(-50%);
+  width: 512px;
+  max-width: 48%;
+  z-index: 3;
+}
+
+.contact-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 .contact-email-prominent {
   font-family: var(--font-serif);
   font-variation-settings: 'SOFT' 60, 'opsz' 144;
@@ -1421,14 +1462,11 @@ footer {
 }
 
 .form-intro {
-  font-family: var(--font-serif);
-  font-variation-settings: 'SOFT' 60, 'opsz' 144;
-  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
-  line-height: 1.45;
+  font-size: 14.5px;
+  line-height: 1.55;
   color: var(--ink-soft);
   margin-bottom: 2.5rem;
   max-width: 52ch;
-  letter-spacing: -0.005em;
 }
 
 .form-intro em {
@@ -1638,6 +1676,25 @@ span.label::before {
 
 /* ── HERO: warm luminance behind headline ── */
 .hero { overflow: hidden; }
+
+/* Reduce contact page hero bottom spacing by 150px */
+body:not(.index-page):not(.acquisitions-page) .hero {
+  padding-bottom: calc(2.25rem - 150px);
+}
+
+/* Hero divider for contact page */
+.hero-divider {
+  height: 1px;
+  background: rgba(15,24,20,0.09);
+  margin: 1.5rem 0;
+  grid-column: 1 / -1;
+}
+
+/* Remove all excess space between divider and contact form */
+body:not(.index-page):not(.acquisitions-page) #form.page {
+  padding-top: 0;
+}
+
 .hero::after {
   content: '';
   position: absolute;
@@ -1911,14 +1968,14 @@ span.label::before {
   --bone-warm:     #F2E9D4;
   --bone-deep:     #E8D9B6;
   --rule:          #DDD0B4;
-  --rule-soft:     #EAE0CB;
+  --surf-hero:     #D8E8F2;
   --brass:         #1D8A6E;
   --brass-bright:  #22A07F;
   --brass-soft:    #1D9474;
   --section-accent-bg: #F5EDD0;  /* warm amber-sand for Why Founders */
 }
 
-body { background: var(--bone); }
+body { background: var(--surf-hero); }
 
 /* ─ Buttons: refined, not pill ──────────────────────────────────── */
 .btn { border-radius: 5px !important; }
@@ -2203,17 +2260,146 @@ span.label::before {
   .hero-bg::before,
   .hero-bg::after { animation: none !important; }
 }
+
+/* ─ Force disable ALL logo animations and transitions ───────────── */
+nav.top .wordmark,
+nav.top .wordmark *,
+nav.top .wordmark:hover,
+nav.top .wordmark:focus-visible,
+nav.top .wordmark em,
+nav.top .wordmark em:hover,
+nav.top .wordmark em:focus-visible,
+nav.top .nav-logomark,
+nav.top .nav-logomark:hover,
+nav.top .nav-logomark:focus-visible,
+nav.top .wordmark img,
+nav.top .wordmark img:hover,
+nav.top .wordmark img:focus-visible,
+a.wordmark,
+a.wordmark *,
+a.wordmark:hover,
+a.wordmark:focus-visible,
+a.wordmark em,
+a.wordmark em:hover,
+a.wordmark em:focus-visible,
+a.wordmark img,
+a.wordmark img:hover,
+a.wordmark img:focus-visible {
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -ms-animation: none !important;
+  -o-animation: none !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  -o-transform: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  backface-visibility: hidden !important;
+  perspective: none !important;
+  transform-style: flat !important;
+  will-change: auto !important;
+  scale: 1 !important;
+  translate: 0 !important;
+  rotate: 0 !important;
+}
+
+/* ── Clean Logo Styling ───────────────────────────────────────────── */
+.logo-container,
+.logo-container *,
+.logo-container::before,
+.logo-container::after {
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -ms-animation: none !important;
+  -o-animation: none !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  -o-transform: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  backface-visibility: hidden !important;
+  perspective: none !important;
+  transform-style: flat !important;
+  will-change: auto !important;
+}
+
+.logo-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-text {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--text);
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.logo-italic {
+  font-style: italic;
+  color: #278788;
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.logo-period {
+  color: var(--accent);
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.logo-image {
+  height: 1.215rem;
+  width: auto;
+  display: block;
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 /* ── Teal theme: nav, buttons, form, CTA ── */
 nav.top {
-  background: rgba(222, 238, 236, 0.95) !important;
-  border-top: none;
+  background: linear-gradient(160deg, var(--surf-hero) 0%, #dff0ee 100%) !important;
+  border-top: none !important;
+  position: relative;
 }
+
+nav.top::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(13,31,26,0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+
 nav.top.scrolled {
   background: rgba(222, 238, 236, 0.99) !important;
   box-shadow: 0 1px 0 var(--brass), 0 10px 40px -8px rgba(13,31,26,0.1) !important;
 }
 body {
-  background: linear-gradient(160deg, #e2f0ee 0%, #dff0ee 100%);
+  background: linear-gradient(160deg, var(--surf-hero) 0%, #dff0ee 100%);
 }
 .nav-cta {
   background: var(--forest) !important;
@@ -2287,6 +2473,101 @@ footer {
   background: linear-gradient(180deg, #d6ecf2 0%, #cce6ee 100%) !important;
 }
 
+/* ═══════════════════════════════════════════════════════════════════
+   NEUE HAAS GROTESK + NAV LOGOMARK
+   ═══════════════════════════════════════════════════════════════════ */
+:root {
+  --font-display: 'NeueHaasGroteskDisplayPro', 'Neue Haas Grotesk Display Pro', 'Helvetica Neue', Arial, sans-serif;
+}
+
+h1, h2, h3, h4,
+.hero-headline,
+.page-title,
+.final-cta-headline,
+.founder-name,
+.claim-phrase,
+.faq-q {
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  font-variation-settings: normal !important;
+  letter-spacing: -0.018em !important;
+}
+
+h1 em, h2 em, h3 em, h4 em,
+.hero-headline em,
+.page-title em,
+.final-cta-headline em,
+.claim-phrase em {
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  font-style: italic !important;
+}
+
+.hero-headline {
+  font-size: clamp(2.25rem, 5.85vw, 5.4rem) !important;
+  letter-spacing: -0.028em !important;
+  line-height: 1.0 !important;
+}
+
+.page-title {
+  font-size: clamp(1.575rem, 3.15vw, 2.475rem) !important;
+  letter-spacing: -0.018em !important;
+  line-height: 1.05 !important;
+}
+
+.final-cta-headline {
+  font-size: clamp(2.25rem, 5.4vw, 4.5rem) !important;
+  letter-spacing: -0.025em !important;
+}
+
+.hero-sub {
+  font-size: clamp(0.9rem, 1.05vw, 1rem) !important;
+  max-width: 48ch !important;
+}
+
+.wordmark {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.nav-logomark {
+  display: inline-block;
+  height: 1em;
+  width: auto;
+  vertical-align: middle;
+  margin-left: 0.4em;
+  flex-shrink: 0;
+  animation: none !important;
+  transition: none !important;
+}
+
+/* ── SEAMLESS NAV + SOLID HERO ── */
+:root {
+  --hero-surface: #C8E8E2;
+}
+nav.top {
+  position: sticky !important;
+  top: 0 !important;
+  background: #d8e8ef !important;
+  border-bottom: 1px solid transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+nav.top.scrolled {
+  background: #d8e8ef !important;
+  box-shadow: none !important;
+}
+.hero {
+  background: #d8e8ef !important;
+}
+.hero-bg,
+.hero::before,
+.hero::after {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 </style>
 </head>
 <body>
@@ -2295,7 +2576,10 @@ footer {
 
 <nav class="top">
   <div class="container">
-    <a href="https://everis.ai" class="wordmark" aria-label="Everis">Ever<em>is</em><span class="wordmark-period">.</span></a>
+    <div class="logo-container">
+  <span class="logo-text">Ever<em class="logo-italic">is</em><span class="logo-period">.</span></span>
+  <img src="assets/everis%20logo.png" class="logo-image" alt="" aria-hidden="true">
+</div>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="acquisitions.html">Acquisitions</a></li>
@@ -2319,16 +2603,17 @@ footer {
       </div>
 
       <h1 class="hero-headline reveal">
-        Tell us what<br />
-        you've <em>built</em>.
+        Let's talk about<br />
+        what you've <em>built</em>.
       </h1>
 
-
+      <div class="hero-divider reveal"></div>
+      
     </div>
   </section>
 
   <!-- ==================== CONTACT GRID ==================== -->
-  <section class="page" id="form" style="padding-top: 1rem;">
+  <section class="page" id="form">
     <div class="container">
       <div class="contact-grid">
 
@@ -2423,6 +2708,10 @@ footer {
             </p>
           </div>
 
+          <div class="contact-image reveal">
+            <img src="assets/doodles/contact doodle.png" alt="Contact illustration" />
+          </div>
+
         </aside>
 
       </div>
@@ -2468,9 +2757,6 @@ footer {
     </div>
   </div>
 
-  <div class="wordmark-giant-wrap">
-    <span class="wordmark-giant" aria-hidden="true">Ever<em>is</em><span class="wordmark-period">.</span></span>
-  </div>
 </footer>
 
 <script>
@@ -2495,6 +2781,14 @@ footer {
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Immediately reveal elements already in the viewport on load
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.in-view)').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight + 100) el.classList.add('in-view');
+    });
+  }, 0);
 
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
