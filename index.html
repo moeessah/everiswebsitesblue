@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -17,7 +17,7 @@
    ======================================================= */
 
 :root {
-  /* Palette — Teal Edition */
+  /* Palette â€” Teal Edition */
   --bone:          #EAF4F1;
   --bone-warm:     #B9D7CF;
   --bone-deep:     #BAE0D8;
@@ -264,28 +264,22 @@ nav.top .container {
   font-size: 13.5px;
   color: var(--ink-soft);
   position: relative;
-  padding: 4px 0 6px;
+  padding: 4px 8px 5px;
   font-weight: 400;
   letter-spacing: 0.01em;
-  transition: color 0.2s ease;
+  border-radius: 6px;
+  transition: color 0.25s ease, text-shadow 0.25s ease, background 0.25s ease;
   overflow: visible;
 }
 
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 1px;
-  width: 0;
-  height: 1px;
-  background: var(--brass);
-  transition: none;
-}
+.nav-links a::after { display: none; }
 
 .nav-links a:hover,
-.nav-links a.active { color: var(--ink); }
-.nav-links a:hover::after,
-.nav-links a.active::after { width: 100%; }
+.nav-links a.active {
+  color: var(--brass-bright);
+  text-shadow: 0 0 14px rgba(29, 148, 116, 0.55), 0 0 28px rgba(29, 148, 116, 0.22);
+  background: rgba(29, 148, 116, 0.07);
+}
 
 /* Primary CTA button in nav - bright gold with dark text, unmissable */
 .nav-cta {
@@ -1640,12 +1634,12 @@ textarea.form-field {
   .form-row { grid-template-columns: 1fr; }
 }
 
-/* ═══════════════════════════════════════════════════════════════════
-   EVERIS — REDESIGN
-   Real contrast · Visible hierarchy · World-class details
-   ═══════════════════════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   EVERIS â€” REDESIGN
+   Real contrast Â· Visible hierarchy Â· World-class details
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* ── Brass top stripe on nav ── */
+/* â”€â”€ Brass top stripe on nav â”€â”€ */
 nav.top {
   border-top: none;
   border-bottom-color: rgba(207,195,167,0.45);
@@ -1657,13 +1651,13 @@ nav.top.scrolled {
   box-shadow: 0 2px 0 var(--brass), 0 12px 48px -8px rgba(15,24,20,0.12);
 }
 
-/* ── Page section titles: brass left accent ── */
+/* â”€â”€ Page section titles: brass left accent â”€â”€ */
 .page-title {
   border-left: 3px solid var(--brass);
   padding-left: 1.5rem;
 }
 
-/* ── Section labels: short dash ornament ── */
+/* â”€â”€ Section labels: short dash ornament â”€â”€ */
 span.label {
   display: inline-flex;
   align-items: center;
@@ -1679,7 +1673,7 @@ span.label::before {
   flex-shrink: 0;
 }
 
-/* ── HERO: warm luminance behind headline ── */
+/* â”€â”€ HERO: warm luminance behind headline â”€â”€ */
 .hero { overflow: hidden; }
 .hero::after {
   content: '';
@@ -1693,16 +1687,16 @@ span.label::before {
   z-index: -1;
 }
 
-/* ── Staggered hero reveals ── */
+/* â”€â”€ Staggered hero reveals â”€â”€ */
 .hero .reveal:nth-child(1) { transition-delay: 0s; }
 .hero .reveal:nth-child(2) { transition-delay: 0.09s; }
 .hero .reveal:nth-child(3) { transition-delay: 0.18s; }
 .hero .reveal:nth-child(4) { transition-delay: 0.27s; }
 .hero .reveal:nth-child(5) { transition-delay: 0.36s; }
 
-/* ══════════════════════════════════════════════════════
-   WHY FOUNDERS — Dark dramatic section
-   ══════════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   WHY FOUNDERS â€” Dark dramatic section
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .why-founders {
   background: var(--forest);
   color: var(--bone);
@@ -1735,9 +1729,9 @@ span.label::before {
 .why-founders .claim-phrase em { color: var(--brass); }
 .why-founders .claim-body { color: rgba(239,233,219,0.62); }
 
-/* ══════════════════════════════════════════════════════
-   AFTER-CLOSE CARDS — Dark premium
-   ══════════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   AFTER-CLOSE CARDS â€” Dark premium
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .after-card {
   background: var(--forest);
   color: var(--bone);
@@ -1765,9 +1759,9 @@ span.label::before {
 .after-card .after-title { color: var(--bone); }
 .after-card .after-body { color: rgba(239,233,219,0.65); }
 
-/* ══════════════════════════════════════════════════════
-   PROCESS STEPS — Watermark index numbers
-   ══════════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   PROCESS STEPS â€” Watermark index numbers
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .process-step {
   position: relative;
   transition: border-top-color 0.4s cubic-bezier(0.22,0.8,0.3,1);
@@ -1794,23 +1788,23 @@ span.label::before {
 }
 .process-step > * { position: relative; z-index: 1; }
 
-/* ══════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CLAIMS
-   ══════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .claim {
   transition: border-top-color 0.4s cubic-bezier(0.22,0.8,0.3,1);
 }
 .claim:hover { border-top-color: var(--brass); }
 
-/* ══════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CRITERIA COLS
-   ══════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .criteria-col h3 { transition: border-bottom-color 0.35s ease; }
 .criteria-col:hover h3 { border-bottom-color: var(--brass); }
 
-/* ══════════════════════════════════════════════════════
-   FAQ — Accordion
-   ══════════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   FAQ â€” Accordion
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .faq-qa { gap: 0; }
 .faq-a {
   max-height: 0;
@@ -1849,9 +1843,9 @@ span.label::before {
 }
 .faq-item.open .faq-q { color: var(--brass); }
 
-/* ══════════════════════════════════════════════════════
-   CONTACT FORM — White inputs
-   ══════════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   CONTACT FORM â€” White inputs
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .form-field {
   background: #ffffff;
   border-color: rgba(207,195,167,0.7);
@@ -1866,7 +1860,7 @@ span.label::before {
 }
 .form-field::placeholder { color: rgba(95,109,100,0.55); }
 
-/* ── Routing options: white ── */
+/* â”€â”€ Routing options: white â”€â”€ */
 .routing-option { display: flex; }
 .routing-option label {
   background: #ffffff;
@@ -1880,9 +1874,9 @@ span.label::before {
   border-color: var(--ink-soft);
 }
 
-/* ══════════════════════════════════════════════════════
-   FOUNDER PHOTOS — Bottom depth gradient
-   ══════════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   FOUNDER PHOTOS â€” Bottom depth gradient
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .founder-photo {
   box-shadow: 0 8px 32px -8px rgba(15,24,20,0.25);
 }
@@ -1898,9 +1892,9 @@ span.label::before {
 }
 .founder-card:hover .founder-photo::before { opacity: 0; }
 
-/* ══════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    BUTTONS
-   ══════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .btn-primary:hover {
   box-shadow: 0 8px 28px -8px rgba(29,138,110,0.45), 0 2px 8px -4px rgba(29,138,110,0.2);
 }
@@ -1908,17 +1902,17 @@ span.label::before {
   box-shadow: 0 6px 20px -6px rgba(29,138,110,0.5) !important;
 }
 
-/* ══════════════════════════════════════════════════════
-   SCROLL PROGRESS — Glow
-   ══════════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SCROLL PROGRESS â€” Glow
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .scroll-progress {
   box-shadow: 3px 0 14px rgba(29,138,110,0.5);
   border-radius: 0 2px 2px 0;
 }
 
-/* ══════════════════════════════════════════════════════
-   FINAL CTA — Richer atmosphere
-   ══════════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   FINAL CTA â€” Richer atmosphere
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .final-cta::before {
   content: '';
   position: absolute;
@@ -1930,9 +1924,9 @@ span.label::before {
   z-index: 1;
 }
 
-/* ══════════════════════════════════════════════════════
-   FOOTER WORDMARK — Fixed small size + fade
-   ══════════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   FOOTER WORDMARK â€” Fixed small size + fade
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .wordmark-giant {
   font-size: 150px !important;
   letter-spacing: -0.06em;
@@ -1943,12 +1937,12 @@ span.label::before {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════════
-   EVERIS — ELEVATED REDESIGN  |  Warm Modernist Editorial
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   EVERIS â€” ELEVATED REDESIGN  |  Warm Modernist Editorial
    Lead-designer-grade overrides.
-   ═══════════════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* ─ Palette refinements ──────────────────────────────────────────── */
+/* â”€ Palette refinements â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :root {
   --bone:          #E8F4F2;
   --bone-warm:     #D6EEE9;
@@ -1969,16 +1963,16 @@ span.label::before {
 
 body { background: var(--surf-hero); }
 
-/* ─ Buttons: refined, not pill ──────────────────────────────────── */
+/* â”€ Buttons: refined, not pill â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .btn { border-radius: 5px !important; }
 .nav-cta { border-radius: 5px !important; }
 
-/* ─ Nav refinement ──────────────────────────────────────────────── */
+/* â”€ Nav refinement â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 nav.top.scrolled {
   box-shadow: 0 1px 0 var(--brass), 0 10px 40px -8px rgba(15,24,20,0.1) !important;
 }
 
-/* ─ Hero: animated warm-orb background ─────────────────────────── */
+/* â”€ Hero: animated warm-orb background â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 /* Kill the old static radial glow */
 .hero::after { display: none !important; }
@@ -1994,7 +1988,7 @@ nav.top.scrolled {
   background-size: 30px 30px;
 }
 
-/* Large warm amber orb – top-right */
+/* Large warm amber orb â€“ top-right */
 .hero-bg::before {
   content: '';
   position: absolute;
@@ -2012,7 +2006,7 @@ nav.top.scrolled {
   animation: orb-a 22s ease-in-out infinite alternate;
 }
 
-/* Softer cream orb – bottom-left */
+/* Softer cream orb â€“ bottom-left */
 .hero-bg::after {
   content: '';
   position: absolute;
@@ -2050,7 +2044,7 @@ nav.top.scrolled {
   letter-spacing: -0.038em !important;
 }
 
-/* ─ Page titles: underline accent, no side border ───────────────── */
+/* â”€ Page titles: underline accent, no side border â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .page-title {
   border-left: none !important;
   padding-left: 0 !important;
@@ -2064,13 +2058,13 @@ nav.top.scrolled {
   margin-top: 0.8rem;
 }
 
-/* ─ Section labels: slightly longer dash ───────────────────────── */
+/* â”€ Section labels: slightly longer dash â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 span.label::before {
   width: 20px !important;
   height: 1.5px !important;
 }
 
-/* ─ Why Founders: warm-sand, NOT dark ──────────────────────────── */
+/* â”€ Why Founders: warm-sand, NOT dark â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .why-founders {
   background: var(--section-accent-bg) !important;
   color: var(--ink) !important;
@@ -2084,7 +2078,7 @@ span.label::before {
   display: none;
 }
 
-/* why-founders — dark section */
+/* why-founders â€” dark section */
 .why-founders .label            { color: rgba(232,245,242,0.5) !important; }
 .why-founders .edition-num      { color: rgba(232,245,242,0.3) !important; }
 .why-founders .page-title       { color: var(--bone) !important; }
@@ -2106,19 +2100,19 @@ span.label::before {
 .why-founders .claim-phrase em  { color: var(--brass) !important; }
 .why-founders .claim-body       { color: rgba(232,245,242,0.62) !important; }
 
-/* ─ Claim numbers: more dramatic scale ─────────────────────────── */
+/* â”€ Claim numbers: more dramatic scale â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .claim-number {
   font-size: clamp(3.5rem, 6vw, 5.25rem) !important;
   letter-spacing: -0.045em;
 }
 
-/* ─ After-close cards: keep dark, sharpen corners ──────────────── */
+/* â”€ After-close cards: keep dark, sharpen corners â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .after-card { border-radius: 4px !important; }
 .after-card::before {
   background: linear-gradient(90deg, var(--brass), rgba(29,138,110,0.15)) !important;
 }
 
-/* ─ Founder photos → perfect circles ───────────────────────────── */
+/* â”€ Founder photos â†’ perfect circles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .founder-photo {
   border-radius: 50% !important;
   aspect-ratio: 1 / 1 !important;
@@ -2135,7 +2129,7 @@ span.label::before {
   align-items: center !important;
 }
 
-/* ─ Criteria list bullets → dashes ─────────────────────────────── */
+/* â”€ Criteria list bullets â†’ dashes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .criteria-col li::before {
   border-radius: 0 !important;
   width: 10px !important;
@@ -2153,37 +2147,37 @@ span.label::before {
   opacity: 0.45;
 }
 
-/* ─ "Outside that range" paragraph: single line ────────────────── */
+/* â”€ "Outside that range" paragraph: single line â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .criteria-body p:nth-child(2),
 .criteria-body p + p {
   max-width: none !important;
 }
 
-/* ─ Criteria section visual: tighter body ──────────────────────── */
+/* â”€ Criteria section visual: tighter body â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .criteria-body p { max-width: 52ch; }
 
-/* ─ FAQ indicator: dash not default ────────────────────────────── */
+/* â”€ FAQ indicator: dash not default â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .faq-num {
   font-variant-numeric: tabular-nums;
 }
 
-/* ─ Process step watermark: bolder opacity ─────────────────────── */
+/* â”€ Process step watermark: bolder opacity â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .process-step::after {
   opacity: 0.055 !important;
 }
 
-/* ─ Hero signature: soft separator ─────────────────────────────── */
+/* â”€ Hero signature: soft separator â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .hero-signature {
   border-top-color: rgba(15,24,20,0.09) !important;
 }
 
-/* ─ Scroll progress: slightly thicker ──────────────────────────── */
+/* â”€ Scroll progress: slightly thicker â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .scroll-progress {
   height: 3px !important;
   box-shadow: 2px 0 16px rgba(29,138,110,0.5) !important;
 }
 
-/* ─ Final CTA: subtle geometric accent ─────────────────────────── */
+/* â”€ Final CTA: subtle geometric accent â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .final-cta {
   position: relative;
   overflow: hidden;
@@ -2200,29 +2194,29 @@ span.label::before {
 }
 .final-cta .container { z-index: 2; }
 
-/* ─ Why founders: no dark .claim overrides needed (light section) ─ */
+/* â”€ Why founders: no dark .claim overrides needed (light section) â”€ */
 /* Re-enable default border color for dark-mode toggle */
 .why-founders .claim-grid { position: relative; z-index: 1; }
 
-/* ─ Footer wordmark fade ────────────────────────────────────────── */
+/* â”€ Footer wordmark fade â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .wordmark-giant {
   font-size: 130px !important;
   letter-spacing: -0.06em;
 }
 
-/* ─ Page title: acquisitions-specific ──────────────────────────── */
+/* â”€ Page title: acquisitions-specific â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .criteria-section .page-title::after,
 .faq-section .page-title::after {
   background: var(--brass);
 }
 
-/* ─ Contact form: input focus ring ─────────────────────────────── */
+/* â”€ Contact form: input focus ring â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .form-field:focus {
   border-color: var(--brass) !important;
   box-shadow: 0 0 0 3px rgba(29,138,110,0.12) !important;
 }
 
-/* ─ Routing option selected: brass accent ──────────────────────── */
+/* â”€ Routing option selected: brass accent â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .routing-option input:checked + label {
   border-color: var(--brass) !important;
   background: rgba(29,138,110,0.08) !important;
@@ -2235,13 +2229,13 @@ span.label::before {
   border-color: var(--brass-bright) !important;
 }
 
-/* ─ Reduced motion: respect preferences ────────────────────────── */
+/* â”€ Reduced motion: respect preferences â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (prefers-reduced-motion: reduce) {
   .hero-bg::before,
   .hero-bg::after { animation: none !important; }
 }
 
-/* ─ Force disable ALL logo animations and transitions ───────────── */
+/* â”€ Force disable ALL logo animations and transitions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 nav.top .wordmark,
 nav.top .wordmark *,
 nav.top .wordmark:hover,
@@ -2289,7 +2283,7 @@ a.wordmark img:focus-visible {
   rotate: 0 !important;
 }
 
-/* ── Clean Logo Styling ───────────────────────────────────────────── */
+/* â”€â”€ Clean Logo Styling â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .logo-container,
 .logo-container *,
 .logo-container::before,
@@ -2358,16 +2352,16 @@ a.wordmark img:focus-visible {
   transition: none !important;
 }
 
-/* ═══════════════════════════════════════════════════════════════════
-   TEAL ELEVATION LAYER — Gradients, depth, geometric accents
-   ═══════════════════════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   TEAL ELEVATION LAYER â€” Gradients, depth, geometric accents
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* ── Body: very subtle teal-to-white gradient ── */
+/* â”€â”€ Body: very subtle teal-to-white gradient â”€â”€ */
 body {
   background: linear-gradient(160deg, var(--surf-hero) 0%, #dff0ee 100%);
 }
 
-/* ── Nav: match hero background ── */
+/* â”€â”€ Nav: match hero background â”€â”€ */
 nav.top {
   background: linear-gradient(160deg, var(--surf-hero) 0%, #dff0ee 100%) !important;
   border-top: none !important;
@@ -2388,7 +2382,7 @@ nav.top.scrolled {
   box-shadow: 0 1px 0 var(--brass), 0 10px 40px -8px rgba(13,31,26,0.1) !important;
 }
 
-/* ── Hero: layered radial teal orbs ── */
+/* â”€â”€ Hero: layered radial teal orbs â”€â”€ */
 .hero-bg {
   background-image: radial-gradient(circle, rgba(13,31,26,0.04) 1px, transparent 1px) !important;
   background-size: 30px 30px !important;
@@ -2407,7 +2401,7 @@ nav.top.scrolled {
   ) !important;
 }
 
-/* ── Geometric watermark blob in hero ── */
+/* â”€â”€ Geometric watermark blob in hero â”€â”€ */
 .hero::before {
   content: '';
   position: absolute;
@@ -2426,12 +2420,12 @@ nav.top.scrolled {
   z-index: 0;
 }
 
-/* ── Section backgrounds: subtle gradients ── */
+/* â”€â”€ Section backgrounds: subtle gradients â”€â”€ */
 section.page {
   background: linear-gradient(180deg, transparent 0%, rgba(29,138,110,0.018) 100%);
 }
 
-/* ── Why founders: richer teal gradient with geometric orb ── */
+/* â”€â”€ Why founders: richer teal gradient with geometric orb â”€â”€ */
 .why-founders {
   background: linear-gradient(135deg, var(--forest) 0%, var(--forest-soft) 100%) !important;
   color: var(--bone) !important;
@@ -2454,7 +2448,7 @@ section.page {
   z-index: 0;
 }
 
-/* ── After-close cards: teal dark variant ── */
+/* â”€â”€ After-close cards: teal dark variant â”€â”€ */
 .after-card {
   background: linear-gradient(145deg, var(--forest) 0%, var(--forest-soft) 100%) !important;
   border-top: 2px solid rgba(29,138,110,0.5) !important;
@@ -2463,7 +2457,7 @@ section.page {
   background: linear-gradient(145deg, var(--forest-soft) 0%, var(--forest) 100%) !important;
 }
 
-/* ── Final CTA: deeper atmospheric gradient ── */
+/* â”€â”€ Final CTA: deeper atmospheric gradient â”€â”€ */
 .final-cta {
   background: linear-gradient(135deg, var(--forest-deep) 0%, var(--forest) 60%, #1a3d32 100%) !important;
 }
@@ -2471,7 +2465,7 @@ section.page {
   background: radial-gradient(ellipse at center, rgba(29,138,110,0.18) 0%, transparent 60%) !important;
 }
 
-/* ── Footer: dark teal with subtle noise ── */
+/* â”€â”€ Footer: dark teal with subtle noise â”€â”€ */
 footer {
   background: linear-gradient(160deg, var(--forest-deep) 0%, #0c1d29 100%) !important;
 }
@@ -2496,21 +2490,21 @@ footer {
 }
 }
 
-/* ── Section divider: teal rule gradient ── */
+/* â”€â”€ Section divider: teal rule gradient â”€â”€ */
 section.page {
   border-bottom-color: var(--rule-soft) !important;
 }
 
-/* ── Criteria visual separator ── */
+/* â”€â”€ Criteria visual separator â”€â”€ */
 .criteria-visual {
   border-left-color: var(--rule) !important;
 }
 
-/* ── Claim hover: teal border ── */
+/* â”€â”€ Claim hover: teal border â”€â”€ */
 .claim:hover { border-top-color: var(--brass) !important; }
 .why-founders .claim:hover { border-top-color: var(--brass-bright) !important; }
 
-/* ── Process step background shape ── */
+/* â”€â”€ Process step background shape â”€â”€ */
 .page.criteria-section {
   background: linear-gradient(135deg, var(--bone-warm) 0%, var(--bone) 100%) !important;
   position: relative;
@@ -2532,22 +2526,22 @@ section.page {
   z-index: 0;
 }
 
-/* ── FAQ section: warmer tonal ── */
+/* â”€â”€ FAQ section: warmer tonal â”€â”€ */
 .faq-section {
   background: linear-gradient(180deg, var(--bone-warm) 0%, var(--bone) 100%) !important;
 }
 
-/* ── Founder photo glow ── */
+/* â”€â”€ Founder photo glow â”€â”€ */
 .founder-photo {
   box-shadow: 0 8px 32px -8px rgba(29,138,110,0.2), 0 2px 8px rgba(13,31,26,0.15) !important;
 }
 
-/* ── Hero signature border ── */
+/* â”€â”€ Hero signature border â”€â”€ */
 .hero-signature {
   border-top-color: rgba(29,138,110,0.15) !important;
 }
 
-/* ── Scroll progress ── */
+/* â”€â”€ Scroll progress â”€â”€ */
 .scroll-progress {
   width: 100% !important;
   height: 4px !important;
@@ -2557,7 +2551,7 @@ section.page {
   transform-origin: left center;
 }
 
-/* ── Nav CTA button ── */
+/* â”€â”€ Nav CTA button â”€â”€ */
 .nav-cta {
   background: var(--forest) !important;
   color: #e8f5f2 !important;
@@ -2568,7 +2562,7 @@ section.page {
   box-shadow: 0 6px 20px -6px rgba(29,138,110,0.45) !important;
 }
 
-/* ── Buttons: teal forest primary ── */
+/* â”€â”€ Buttons: teal forest primary â”€â”€ */
 .btn-primary {
   background: var(--forest) !important;
   color: var(--bone) !important;
@@ -2779,14 +2773,14 @@ section.page {
 }
 
 
-/* ═══════════════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    NEUE HAAS GROTESK + NAV LOGOMARK + DOODLE UNIT + DIVIDER
-   ═══════════════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 :root {
   --font-display: 'NeueHaasGroteskDisplayPro', 'Neue Haas Grotesk Display Pro', 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Headings → Neue Haas Grotesk Bold */
+/* Headings â†’ Neue Haas Grotesk Bold */
 h1, h2, h3, h4,
 .hero-headline,
 .page-title,
@@ -2854,7 +2848,7 @@ h1 em, h2 em, h3 em, h4 em,
   transition: none !important;
 }
 
-/* Doodle sits on the hero-signature border-top line — bottom set via JS measurement */
+/* Doodle sits on the hero-signature border-top line â€” bottom set via JS measurement */
 .hero-signature {
   position: relative;
   overflow: visible;
@@ -2900,7 +2894,7 @@ h1 em, h2 em, h3 em, h4 em,
   }
 }
 
-/* ── SEAMLESS NAV + SOLID HERO ── */
+/* â”€â”€ SEAMLESS NAV + SOLID HERO â”€â”€ */
 nav.top {
   position: sticky !important;
   top: 0 !important;
@@ -2924,26 +2918,87 @@ nav.top.scrolled {
   pointer-events: none !important;
 }
 
+
+/* template-static-overrides */
+:root {
+  --text: var(--ink);
+  --accent: var(--brass);
+}
+
+body.template-shell {
+  min-height: 0;
+  display: block;
+}
+
+body.template-shell nav.top,
+body.template-shell nav.top.scrolled {
+  position: relative !important;
+  top: auto !important;
+}
+
+body.template-shell footer {
+  margin-top: 0;
+}
+
+body.template-shell .scroll-progress,
+body.template-shell .nav-toggle {
+  display: none !important;
+}
+
+@media (max-width: 880px) {
+  body.template-shell nav.top .container {
+    height: auto;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  body.template-shell .nav-links,
+  body.template-shell .nav-links.open {
+    display: flex !important;
+    position: static !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 1rem !important;
+    padding: 0 !important;
+    border-bottom: 0 !important;
+    background: transparent !important;
+  }
+
+  body.template-shell .nav-links a,
+  body.template-shell .nav-links.open a {
+    width: auto !important;
+    padding: 4px 8px 5px !important;
+    font-size: 13.5px !important;
+    border-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 560px) {
+  body.template-shell .nav-links,
+  body.template-shell .nav-links.open {
+    flex-wrap: wrap;
+  }
+}
 </style>
 </head>
-<body>
-
-<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
+<body class="template-shell">
 <nav class="top">
   <div class="container">
-    <div class="logo-container">
+    <a href="https://www.everis.ai" class="logo-container" aria-label="Everis" target="_blank" rel="noopener">
   <span class="logo-text">Ever<em class="logo-italic">is</em><span class="logo-period">.</span></span>
-  <img src="assets/everis%20logo.png" class="logo-image" alt="" aria-hidden="true">
-</div>
+  <img src="file:///C:/Users/maure/Downloads/files(4)/assets/everis%20logo.png" class="logo-image" alt="" aria-hidden="true">
+</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="acquisitions.html">Acquisitions</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="acquisitions.html" >Acquisitions</a></li>
+      <li><a href="contact.html" >Contact</a></li>
       <li><a href="contact.html?reason=sell" class="nav-cta">Sell your business</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">Menu</button>
-  </div>
+</div>
 </nav>
 
 <main>
@@ -3201,18 +3256,6 @@ nav.top.scrolled {
 </footer>
 
 <script>
-  const progress = document.getElementById('scrollProgress');
-  const updateProgress = () => {
-    const h = document.documentElement;
-    const maxScroll = Math.max(h.scrollHeight - h.clientHeight, 1);
-    const scrollTop = window.scrollY || h.scrollTop || document.body.scrollTop || 0;
-    const scrolled = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
-    progress.style.transform = `scaleX(${scrolled})`;
-    progress.style.opacity = scrollTop > 10 ? '0.96' : '0';
-  };
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  updateProgress();
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -3230,19 +3273,6 @@ nav.top.scrolled {
       if (r.top < window.innerHeight + 100) el.classList.add('in-view');
     });
   }, 0);
-
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    navToggle.textContent = navLinks.classList.contains('open') ? 'Close' : 'Menu';
-  });
-
-  // Nav scroll class
-  const _nav = document.querySelector('nav.top');
-  const _onScroll = () => _nav.classList.toggle('scrolled', window.scrollY > 20);
-  window.addEventListener('scroll', _onScroll, { passive: true });
-  _onScroll();
 
   // Anchor hero doodle to the divider line above hero-ctas (.hero-ctas::before)
   (function() {
@@ -3264,7 +3294,7 @@ nav.top.scrolled {
     window.addEventListener('resize', pin);
   })();
 
-  // FAQ accordion — open first item by default
+  // FAQ accordion â€” open first item by default
   document.querySelectorAll('.faq-item').forEach((item, i) => {
     if (i === 0) item.classList.add('open');
     item.addEventListener('click', () => {
@@ -3277,3 +3307,4 @@ nav.top.scrolled {
 
 </body>
 </html>
+
