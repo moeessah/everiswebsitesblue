@@ -1,0 +1,80 @@
+body.template-shell nav.top,
+body.template-shell nav.top.scrolled {
+  position: relative !important;
+  top: auto !important;
+  border-bottom: 1px solid transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+body.template-shell nav.top::before {
+  display: none !important;
+}
+
+body.template-shell .hero .reveal {
+  opacity: 0;
+  transform: translateY(8px) !important;
+  filter: blur(6px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.65s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+body.template-shell .hero .reveal.in-view {
+  opacity: 1;
+  transform: translateY(0) !important;
+  filter: blur(0);
+}
+
+body.page-home .hero .hero-eyebrow.reveal {
+  transform: translateY(16px) !important;
+  filter: none;
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 0.8, 0.3, 1),
+    transform 0.9s cubic-bezier(0.22, 0.8, 0.3, 1) !important;
+}
+
+body.page-home .hero .hero-eyebrow.reveal.in-view {
+  transform: translateY(0) !important;
+  filter: none;
+}
+
+body.page-home nav.top,
+body.page-home nav.top.scrolled {
+  background: #c8e4e7 !important;
+}
+
+body.page-acquisitions nav.top,
+body.page-acquisitions nav.top.scrolled {
+  background: #bbdeea !important;
+}
+
+body.page-contact nav.top,
+body.page-contact nav.top.scrolled {
+  background: #d8e8ef !important;
+}
+
+body.page-home .why-founders {
+  background: #163141 !important;
+}
+
+body.page-acquisitions .hero-image {
+  top: calc(50% - 99px) !important;
+}
+
+body.page-acquisitions .after-card,
+body.page-acquisitions .after-card:hover {
+  background: #163141 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.template-shell .hero .reveal,
+  body.page-home .hero .hero-eyebrow.reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}

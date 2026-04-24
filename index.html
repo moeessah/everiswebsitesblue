@@ -1983,56 +1983,75 @@ nav.top.scrolled {
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  /* Dot-grid texture */
-  background-image: radial-gradient(circle, rgba(15,24,20,0.052) 1px, transparent 1px);
-  background-size: 30px 30px;
+  background: linear-gradient(135deg, 
+    var(--surf-hero) 0%, 
+    rgba(216, 232, 242, 0.8) 25%, 
+    rgba(211, 233, 240, 0.9) 50%, 
+    rgba(204, 231, 240, 0.85) 75%, 
+    var(--surf-hero) 100%
+  );
+  background-size: 400% 400%;
+  animation: gentleGradientShift 45s ease-in-out infinite;
 }
 
-/* Large warm amber orb â€“ top-right */
+/* Subtle overlay gradient for depth */
 .hero-bg::before {
   content: '';
   position: absolute;
-  width: 62%;
-  height: 140%;
-  right: -8%;
-  top: -25%;
-  background: radial-gradient(ellipse at 40% 40%,
-    rgba(29,138,110,0.11) 0%,
-    rgba(239,215,160,0.06) 45%,
+  inset: 0;
+  background: radial-gradient(ellipse at 40% 30%,
+    rgba(29, 138, 110, 0.08) 0%,
+    rgba(34, 160, 127, 0.04) 40%,
     transparent 70%
   );
-  filter: blur(55px);
-  border-radius: 62% 38% 55% 45% / 42% 55% 45% 58%;
-  animation: orb-a 22s ease-in-out infinite alternate;
+  animation: gentleGlow 60s ease-in-out infinite;
 }
 
-/* Softer cream orb â€“ bottom-left */
+/* Secondary shifting gradient */
 .hero-bg::after {
   content: '';
   position: absolute;
-  width: 50%;
-  height: 90%;
-  left: -6%;
-  bottom: -15%;
-  background: radial-gradient(ellipse at center,
-    rgba(184,140,50,0.07) 0%,
-    transparent 65%
+  inset: 0;
+  background: linear-gradient(45deg,
+    rgba(29, 148, 116, 0.03) 0%,
+    transparent 30%,
+    rgba(13, 31, 26, 0.02) 60%,
+    transparent 100%
   );
-  filter: blur(70px);
-  border-radius: 50%;
-  animation: orb-b 28s ease-in-out infinite alternate;
+  background-size: 300% 300%;
+  animation: gentleGradientShift 90s ease-in-out infinite reverse;
 }
 
-@keyframes orb-a {
-  0%   { transform: translate(0,   0  ) scale(1.00); opacity: 0.75; }
-  40%  { transform: translate(-3%, 5% ) scale(1.05); opacity: 1.00; }
-  100% { transform: translate(2%, -4% ) scale(0.96); opacity: 0.80; }
+@keyframes gentleGradientShift {
+  0%, 100% { 
+    background-position: 0% 50%;
+    opacity: 0.7;
+  }
+  25% { 
+    background-position: 25% 25%;
+    opacity: 0.75;
+  }
+  50% { 
+    background-position: 100% 50%;
+    opacity: 0.8;
+  }
+  75% { 
+    background-position: 75% 75%;
+    opacity: 0.75;
+  }
 }
 
-@keyframes orb-b {
-  0%   { transform: translate(0, 0  ) scale(1.00); opacity: 0.65; }
-  60%  { transform: translate(5%, -5%) scale(1.08); opacity: 0.95; }
-  100% { transform: translate(-3%, 3%) scale(0.93); opacity: 0.70; }
+@keyframes wave-slow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes wave-medium {
+  0%, 100% { background-position: 100% 0%; }
+  50% { background-position: 0% 100%; }
+}
+@keyframes wave-fast {
+  0%, 100% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
 }
 
 /* Hero container above everything */
@@ -2041,7 +2060,7 @@ nav.top.scrolled {
 /* Hero headline: a touch larger */
 .hero-headline {
   max-width: 15ch !important;
-  letter-spacing: -0.07em !important;
+  letter-spacing: -0.038em !important;
 }
 
 /* â”€ Page titles: underline accent, no side border â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
@@ -2372,8 +2391,12 @@ nav.top::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(13,31,26,0.04) 1px, transparent 1px);
-  background-size: 30px 30px;
+  background: linear-gradient(90deg, 
+    transparent 30%, 
+    rgba(34, 197, 94, 0.05) 50%, 
+    transparent 70%);
+  background-size: 200% 200%;
+  animation: wave-fast 45s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -2388,17 +2411,45 @@ nav.top.scrolled {
   background-size: 30px 30px !important;
 }
 .hero-bg::before {
-  background: radial-gradient(ellipse at 40% 40%,
-    rgba(29,138,110,0.10) 0%,
-    rgba(34,160,127,0.05) 40%,
-    transparent 70%
-  ) !important;
+  background: linear-gradient(135deg, 
+    transparent 25%, 
+    rgba(59, 130, 246, 0.04) 45%,
+    rgba(34, 197, 94, 0.06) 55%, 
+    rgba(52, 211, 153, 0.04) 75%,
+    transparent 85%);
+  background-size: 250% 250%;
+  animation: wave-medium 60s ease-in-out infinite;
+}
+.hero-bg {
+  position: relative;
+}
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, 
+    transparent 25%, 
+    rgba(59, 130, 246, 0.04) 45%,
+    rgba(34, 197, 94, 0.06) 55%, 
+    rgba(52, 211, 153, 0.04) 75%,
+    transparent 85%);
+  background-size: 250% 250%;
+  animation: wave-medium 60s ease-in-out infinite;
+  pointer-events: none;
 }
 .hero-bg::after {
-  background: radial-gradient(ellipse at center,
-    rgba(29,148,116,0.06) 0%,
-    transparent 65%
-  ) !important;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, 
+    transparent 20%, 
+    rgba(52, 211, 153, 0.06) 40%,
+    rgba(34, 197, 94, 0.08) 50%, 
+    rgba(59, 130, 246, 0.06) 60%,
+    transparent 80%);
+  background-size: 300% 300%;
+  animation: wave-slow 90s ease-in-out infinite;
+  pointer-events: none;
 }
 
 /* â”€â”€ Geometric watermark blob in hero â”€â”€ */
@@ -2607,7 +2658,7 @@ section.page {
 .doodle-hero {
   width: clamp(218px, 18.5vw, 319px);
   right: clamp(4rem, 8vw, 9rem);
-  bottom: calc(1.5rem + 1.25rem + 1.2rem + 1.75rem + 1.15rem + 1.5rem + 18px);
+  bottom: calc(1.5rem + 1.25rem + 1.2rem + 1.75rem + 1.15rem + 1.5rem - 22px);
   z-index: 0;
   pointer-events: none;
 }
@@ -2791,7 +2842,7 @@ h1, h2, h3, h4,
   font-family: var(--font-display) !important;
   font-weight: 700 !important;
   font-variation-settings: normal !important;
-  letter-spacing: -0.07em !important;
+  letter-spacing: -0.018em !important;
 }
 
 /* True italic variant for already-italicised words in headings */
@@ -2808,19 +2859,19 @@ h1 em, h2 em, h3 em, h4 em,
 /* Headings: 10% smaller */
 .hero-headline {
   font-size: clamp(2.25rem, 5.85vw, 5.4rem) !important;
-  letter-spacing: -0.07em !important;
+  letter-spacing: -0.028em !important;
   line-height: 1.0 !important;
 }
 
 .page-title {
   font-size: clamp(1.575rem, 3.15vw, 2.475rem) !important;
-  letter-spacing: -0.07em !important;
+  letter-spacing: -0.018em !important;
   line-height: 1.05 !important;
 }
 
 .final-cta-headline {
   font-size: clamp(2.25rem, 5.4vw, 4.5rem) !important;
-  letter-spacing: -0.07em !important;
+  letter-spacing: -0.025em !important;
 }
 
 /* Hero subheading: desktop only, slightly wider so it sits on two lines */
@@ -2898,23 +2949,35 @@ h1 em, h2 em, h3 em, h4 em,
 nav.top {
   position: sticky !important;
   top: 0 !important;
-  background: #c8e4e7 !important;
+  background: linear-gradient(45deg, 
+    transparent 30%, 
+    rgba(30, 46, 37, 0.08) 50%, 
+    transparent 70%);
+  background-size: 200% 200%;
+  animation: wave 15s ease-in-out infinite;
   border-bottom: 1px solid transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   box-shadow: none !important;
 }
 nav.top.scrolled {
-  background: #c8e4e7 !important;
+  background: linear-gradient(45deg, 
+    transparent 30%, 
+    rgba(30, 46, 37, 0.08) 50%, 
+    transparent 70%);
+  background-size: 200% 200%;
+  animation: wave 15s ease-in-out infinite;
   box-shadow: none !important;
 }
 .hero {
   background: #c8e4e7 !important;
 }
-.hero-bg,
-.hero::before,
-.hero::after {
+.hero::before {
   opacity: 0 !important;
+  pointer-events: none !important;
+}
+.hero-bg {
+  opacity: 1 !important;
   pointer-events: none !important;
 }
 
@@ -2984,11 +3047,12 @@ body.template-shell .nav-toggle {
   }
 }
 </style>
+<link rel="stylesheet" href="page-overrides.css" />
 </head>
-<body class="template-shell">
+<body class="template-shell page-home">
 <nav class="top">
   <div class="container">
-    <a href="https://moeessah.github.io/everis/" class="logo-container" aria-label="Everis" target="_blank" rel="noopener">
+    <a href="https://www.everis.ai" class="logo-container" aria-label="Everis" target="_blank" rel="noopener">
   <span class="logo-text">Ever<em class="logo-italic">is</em><span class="logo-period">.</span></span>
   <img src="file:///C:/Users/maure/Downloads/files(4)/assets/everis%20logo.png" class="logo-image" alt="" aria-hidden="true">
 </a>
@@ -3288,7 +3352,7 @@ body.template-shell .nav-toggle {
       const beforeStyles = window.getComputedStyle(ctas, '::before');
       const lineOffset = parseFloat(beforeStyles.top); // will be negative (e.g. -18.4)
       
-      doodle.style.setProperty('bottom', (cRect.bottom - (ctasRect.top + lineOffset) + 15) + 'px', 'important');
+      doodle.style.setProperty('bottom', (cRect.bottom - (ctasRect.top + lineOffset) + 7) + 'px', 'important');
     }
     setTimeout(pin, 50);
     window.addEventListener('resize', pin);
@@ -3307,4 +3371,3 @@ body.template-shell .nav-toggle {
 
 </body>
 </html>
-
