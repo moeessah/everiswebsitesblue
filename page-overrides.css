@@ -69,6 +69,85 @@ body.page-acquisitions .after-card:hover {
   background: #163141 !important;
 }
 
+body.page-acquisitions .hero-headline,
+body.page-acquisitions .page-title,
+body.page-acquisitions .final-cta-headline,
+body.page-acquisitions .founder-name,
+body.page-acquisitions .claim-phrase,
+body.page-acquisitions .faq-q,
+body.page-contact .hero-headline,
+body.page-contact .page-title,
+body.page-contact .final-cta-headline,
+body.page-contact .founder-name,
+body.page-contact .claim-phrase,
+body.page-contact .faq-q {
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  font-variation-settings: normal !important;
+  letter-spacing: -0.018em !important;
+}
+
+body.page-acquisitions .hero-headline em,
+body.page-acquisitions .page-title em,
+body.page-acquisitions .final-cta-headline em,
+body.page-acquisitions .claim-phrase em,
+body.page-contact .hero-headline em,
+body.page-contact .page-title em,
+body.page-contact .final-cta-headline em,
+body.page-contact .claim-phrase em {
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  font-style: italic !important;
+}
+
+body.page-acquisitions .hero-headline,
+body.page-contact .hero-headline {
+  font-size: clamp(2.25rem, 5.85vw, 5.4rem) !important;
+  letter-spacing: -0.091875em !important;
+  line-height: 1 !important;
+}
+
+body.page-acquisitions .page-title,
+body.page-contact .page-title {
+  font-size: clamp(1.575rem, 3.15vw, 2.475rem) !important;
+  letter-spacing: -0.018em !important;
+  line-height: 1.05 !important;
+}
+
+body.page-acquisitions .final-cta-headline,
+body.page-contact .final-cta-headline {
+  font-size: clamp(2.25rem, 5.4vw, 4.5rem) !important;
+  letter-spacing: -0.02734375em !important;
+}
+
+body.page-acquisitions .hero-sub,
+body.page-acquisitions .what-do-lead,
+body.page-contact .hero-sub,
+body.page-contact .what-do-lead {
+  letter-spacing: -0.01em !important;
+}
+
+body.template-shell .hero-headline {
+  letter-spacing: -0.075em !important;
+}
+
+body.template-shell .page-title,
+body.template-shell .claim-phrase,
+body.template-shell .faq-q,
+body.template-shell .founder-name {
+  letter-spacing: -0.01em !important;
+}
+
+body.template-shell .final-cta-headline {
+  letter-spacing: -0.02em !important;
+}
+
+body.template-shell .hero-sub,
+body.template-shell .what-do-lead,
+body.template-shell .why-lead p {
+  letter-spacing: -0.01em !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   body.template-shell .hero .reveal,
   body.page-home .hero .hero-eyebrow.reveal {
