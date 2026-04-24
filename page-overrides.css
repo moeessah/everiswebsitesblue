@@ -138,6 +138,16 @@ body.template-shell .founder-name {
   letter-spacing: -0.01em !important;
 }
 
+body.template-shell.page-acquisitions .page-title,
+body.template-shell.page-acquisitions .process-title,
+body.template-shell.page-acquisitions .criteria-col h3,
+body.template-shell.page-acquisitions .after-title,
+body.template-shell.page-acquisitions .faq-q,
+body.template-shell.page-contact .page-title,
+body.template-shell.page-contact .faq-q {
+  letter-spacing: -0.075em !important;
+}
+
 body.template-shell .final-cta-headline {
   letter-spacing: -0.02em !important;
 }
