@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -120,7 +120,7 @@ h1, h2, h3, h4 {
   font-family: var(--font-serif);
   font-weight: 400;
   font-variation-settings: 'SOFT' 40, 'opsz' 144;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.025em;
   line-height: 1.03;
   color: var(--ink);
 }
@@ -217,7 +217,7 @@ nav.top .container {
   font-weight: 400;
   font-variation-settings: 'SOFT' 40, 'opsz' 144;
   font-size: 1.5rem;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.025em;
   color: var(--ink);
   line-height: 1;
   display: inline-block;
@@ -292,7 +292,7 @@ nav.top .container {
   align-items: center;
   gap: 0.4rem;
   font-weight: 600;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.005em;
   transition: background 0.18s ease, box-shadow 0.18s ease;
   box-shadow: 0 1px 0 rgba(20, 32, 26, 0.08);
 }
@@ -331,7 +331,7 @@ nav.top .container {
   font-family: var(--font-sans);
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.005em;
   border-radius: 100px;
   cursor: pointer;
   transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
@@ -411,7 +411,6 @@ nav.top .container {
   font-family: var(--font-sans);
   line-height: 1.3;
   text-decoration: none;
-  letter-spacing: -0.091875em;
 }
 .txt-link:hover {
   color: var(--brass);
@@ -426,26 +425,46 @@ nav.top .container {
 .txt-link:hover .arrow { transform: translateX(2px); }
 
 /* =======================================================
-   REVEAL ANIMATIONS
+   REVEAL ANIMATIONS - Updated for mature feel
    ======================================================= */
 
+/* Subtle opacity fade for most elements */
 .reveal {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.9s cubic-bezier(0.22, 0.8, 0.3, 1),
-              transform 0.9s cubic-bezier(0.22, 0.8, 0.3, 1);
+  transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .reveal.in-view {
   opacity: 1;
-  transform: translateY(0);
 }
+
+/* Slide-up animation specifically for Apps & SaaS eyebrow */
+.hero-eyebrow.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(1px);
+  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              filter 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.hero-eyebrow.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Staggered hero reveals - updated timing */
+.hero .reveal:nth-child(1) { transition-delay: 0s; }
+.hero .reveal:nth-child(2) { transition-delay: 0.15s; }
+.hero .reveal:nth-child(3) { transition-delay: 0.3s; }
+.hero .reveal:nth-child(4) { transition-delay: 0.45s; }
+.hero .reveal:nth-child(5) { transition-delay: 0.6s; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation: none !important;
     transition: none !important;
   }
-  .reveal { opacity: 1; transform: none; }
+  .reveal { opacity: 1; transform: none; filter: none; }
 }
 
 /* =======================================================
@@ -471,7 +490,7 @@ nav.top .container {
   font-weight: 320;
   font-size: clamp(2.75rem, 7vw, 6.5rem);
   line-height: 0.95;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.018em;
   margin-bottom: 2rem;
   color: var(--ink);
   max-width: 15ch;
@@ -488,7 +507,7 @@ nav.top .container {
   margin-bottom: 2.25rem;
   font-weight: 390;
   max-width: 54ch;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.005em;
 }
 
 .hero-ctas {
@@ -573,8 +592,7 @@ section.page {
   font-size: clamp(1.75rem, 3.5vw, 2.75rem);
   font-weight: 350;
   line-height: 1.05;
-  letter-spacing: -0.091875em;
-  color: var(--ink);
+  letter-spacing: -0.028em;
 }
 
 /* =======================================================
@@ -593,7 +611,6 @@ section.page {
   line-height: 1.5;
   color: var(--ink-soft);
   font-weight: 400;
-  letter-spacing: -0.091875em;
 }
 
 .what-do-lead .emphasis {
@@ -619,7 +636,6 @@ section.page {
   color: var(--ink-soft);
   line-height: 1.55;
   max-width: 55ch;
-  letter-spacing: -0.091875em;
 }
 
 .claim-grid {
@@ -658,7 +674,7 @@ section.page {
   font-weight: 350;
   font-size: clamp(2.75rem, 5vw, 4.25rem);
   line-height: 1;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.04em;
   color: var(--ink);
   margin-bottom: 0.1rem;
 }
@@ -680,7 +696,7 @@ section.page {
   font-size: clamp(1.2rem, 1.6vw, 1.45rem);
   font-weight: 400;
   line-height: 1.15;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.02em;
   color: var(--ink);
   margin-bottom: 1rem;
   margin-top: 0.4rem;
@@ -691,7 +707,6 @@ section.page {
   line-height: 1.55;
   color: var(--ink-soft);
   max-width: 34ch;
-  letter-spacing: -0.091875em;
 }
 
 /* =======================================================
@@ -714,7 +729,6 @@ section.page {
   color: var(--ink-soft);
   margin-bottom: 1.5rem;
   max-width: 48ch;
-  letter-spacing: -0.091875em;
 }
 
 .criteria-visual {
@@ -742,7 +756,7 @@ section.page {
   font-weight: 350;
   font-size: clamp(2.5rem, 5.5vw, 4rem);
   line-height: 0.95;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.04em;
   color: var(--ink);
 }
 .criteria-number .row { display: block; }
@@ -786,7 +800,6 @@ section.page {
   color: var(--ink-soft);
   line-height: 1.55;
   max-width: 52ch;
-  letter-spacing: -0.091875em;
 }
 
 .founders-grid {
@@ -854,7 +867,7 @@ section.page {
   font-variation-settings: 'SOFT' 70, 'opsz' 144;
   font-size: clamp(1.4rem, 1.9vw, 1.7rem);
   font-weight: 400;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.02em;
   line-height: 1.1;
   color: var(--ink);
   margin-bottom: 0.1rem;
@@ -933,7 +946,7 @@ section.page {
   font-weight: 350;
   font-size: clamp(2.5rem, 6vw, 5rem);
   line-height: 1;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.03em;
   color: var(--bone);
   max-width: 14ch;
   margin-bottom: 2.5rem;
@@ -962,7 +975,7 @@ section.page {
   border-bottom: 1px solid rgba(239, 233, 219, 0.35);
   padding-bottom: 3px;
   transition: color 0.25s ease, border-color 0.25s ease;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.01em;
 }
 .final-cta-email:hover {
   color: var(--brass-soft);
@@ -995,7 +1008,6 @@ footer {
   line-height: 1.55;
   color: rgba(239, 233, 219, 0.65);
   max-width: 42ch;
-  letter-spacing: -0.091875em;
 }
 
 .footer-links {
@@ -1029,7 +1041,6 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  letter-spacing: -0.091875em;
 }
 .footer-col a:hover { color: var(--brass-soft); }
 .footer-col a .ext {
@@ -1067,7 +1078,7 @@ footer {
   font-weight: 300;
   font-size: clamp(5rem, 22vw, 22rem);
   line-height: 0.85;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.05em;
   color: var(--bone);
   display: block;
   text-align: left;
@@ -1196,7 +1207,7 @@ footer {
   font-variation-settings: 'SOFT' 30, 'opsz' 144;
   font-size: clamp(2rem, 3.5vw, 2.8rem);
   font-weight: 350;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.03em;
   line-height: 1;
   color: var(--ink);
   margin-bottom: 0.5rem;
@@ -1211,7 +1222,7 @@ footer {
   font-variation-settings: 'SOFT' 70, 'opsz' 144;
   font-size: clamp(1.15rem, 1.5vw, 1.35rem);
   font-weight: 400;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.015em;
   margin-bottom: 0.5rem;
 }
 
@@ -1220,7 +1231,6 @@ footer {
   line-height: 1.55;
   color: var(--ink-soft);
   max-width: 46ch;
-  letter-spacing: -0.091875em;
 }
 
 .criteria-section {
@@ -1242,7 +1252,7 @@ footer {
   font-variation-settings: 'SOFT' 60, 'opsz' 144;
   font-size: clamp(1.35rem, 1.8vw, 1.6rem);
   font-weight: 400;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.02em;
   margin-bottom: 1.25rem;
   color: var(--ink);
   padding-bottom: 0.85rem;
@@ -1263,7 +1273,6 @@ footer {
   color: var(--ink-soft);
   padding-left: 1.25rem;
   position: relative;
-  letter-spacing: -0.091875em;
 }
 
 .criteria-col li::before {
@@ -1327,7 +1336,7 @@ footer {
   font-variation-settings: 'SOFT' 70, 'opsz' 144;
   font-size: 1.5rem;
   font-weight: 400;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.02em;
   line-height: 1.1;
   color: var(--ink);
   margin-bottom: 0.25rem;
@@ -1337,7 +1346,6 @@ footer {
   font-size: 14.5px;
   line-height: 1.55;
   color: var(--ink-soft);
-  letter-spacing: -0.091875em;
 }
 
 /* FAQ */
@@ -1384,7 +1392,7 @@ footer {
   font-variation-settings: 'SOFT' 60, 'opsz' 144;
   font-size: clamp(1.1rem, 1.4vw, 1.3rem);
   font-weight: 400;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.02em;
   color: var(--ink);
   transition: color 0.2s ease;
   line-height: 1.3;
@@ -1395,7 +1403,6 @@ footer {
   line-height: 1.6;
   color: var(--ink-soft);
   max-width: 65ch;
-  letter-spacing: -0.091875em;
 }
 
 @media (max-width: 880px) {
@@ -1444,7 +1451,6 @@ footer {
   font-size: 15px;
   line-height: 1.55;
   color: var(--ink-soft);
-  letter-spacing: -0.091875em;
 }
 .contact-side-block a {
   color: var(--ink);
@@ -1463,7 +1469,7 @@ footer {
   font-variation-settings: 'SOFT' 60, 'opsz' 144;
   font-size: clamp(1.15rem, 1.5vw, 1.35rem);
   font-weight: 400;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.01em;
   color: var(--ink) !important;
   border-bottom: 1px solid var(--ink) !important;
   padding-bottom: 2px !important;
@@ -1483,7 +1489,7 @@ footer {
   color: var(--ink-soft);
   margin-bottom: 2.5rem;
   max-width: 52ch;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.005em;
 }
 
 .form-intro em {
@@ -1656,13 +1662,13 @@ textarea.form-field {
 /* â”€â”€ Brass top stripe on nav â”€â”€ */
 nav.top {
   border-top: none;
-  border-bottom-color: rgba(207,195,167,0.45);
-  box-shadow: 0 8px 40px -8px rgba(15,24,20,0.07);
-  transition: background 0.4s ease, box-shadow 0.4s ease;
+  border-bottom-color: transparent;
+  box-shadow: none;
+  transition: background 0.4s ease;
 }
 nav.top.scrolled {
   background: rgba(234,244,241,0.98);
-  box-shadow: 0 2px 0 var(--brass), 0 12px 48px -8px rgba(15,24,20,0.12);
+  box-shadow: none;
 }
 
 /* â”€â”€ Page section titles: brass left accent â”€â”€ */
@@ -1712,7 +1718,7 @@ span.label::before {
    WHY FOUNDERS â€” Dark dramatic section
    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .why-founders {
-  background: var(--forest);
+  background: #152a34;
   color: var(--bone);
 }
 .why-founders .label {
@@ -1734,7 +1740,7 @@ span.label::before {
 }
 .why-founders .claim:hover { border-top-color: var(--brass); }
 .why-founders .claim::before {
-  background: var(--forest);
+  background: #152a34;
   color: rgba(239,233,219,0.3);
 }
 .why-founders .claim-number { color: var(--bone); }
@@ -1997,75 +2003,14 @@ nav.top.scrolled {
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  background: linear-gradient(135deg, 
-    var(--surf-hero) 0%, 
-    rgba(216, 232, 242, 0.8) 25%, 
-    rgba(211, 233, 240, 0.9) 50%, 
-    rgba(204, 231, 240, 0.85) 75%, 
-    var(--surf-hero) 100%
-  );
-  background-size: 400% 400%;
-  animation: gentleGradientShift 45s ease-in-out infinite;
+  /* Dot-grid texture */
+  background-image: radial-gradient(circle, rgba(15,24,20,0.052) 1px, transparent 1px);
+  background-size: 30px 30px;
 }
 
-/* Subtle overlay gradient for depth */
-.hero-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 40% 30%,
-    rgba(29, 138, 110, 0.08) 0%,
-    rgba(34, 160, 127, 0.04) 40%,
-    transparent 70%
-  );
-  animation: gentleGlow 60s ease-in-out infinite;
-}
-
-/* Secondary shifting gradient */
+.hero-bg::before,
 .hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(45deg,
-    rgba(29, 148, 116, 0.03) 0%,
-    transparent 30%,
-    rgba(13, 31, 26, 0.02) 60%,
-    transparent 100%
-  );
-  background-size: 300% 300%;
-  animation: gentleGradientShift 90s ease-in-out infinite reverse;
-}
-
-@keyframes gentleGradientShift {
-  0%, 100% { 
-    background-position: 0% 50%;
-    opacity: 0.7;
-  }
-  25% { 
-    background-position: 25% 25%;
-    opacity: 0.75;
-  }
-  50% { 
-    background-position: 100% 50%;
-    opacity: 0.8;
-  }
-  75% { 
-    background-position: 75% 75%;
-    opacity: 0.75;
-  }
-}
-
-@keyframes wave-slow {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-@keyframes wave-medium {
-  0%, 100% { background-position: 100% 0%; }
-  50% { background-position: 0% 100%; }
-}
-@keyframes wave-fast {
-  0%, 100% { background-position: 50% 0%; }
-  50% { background-position: 50% 100%; }
+  display: none !important;
 }
 
 /* Hero container above everything */
@@ -2074,7 +2019,8 @@ nav.top.scrolled {
 /* Hero headline: a touch larger */
 .hero-headline {
   max-width: 15ch !important;
-  letter-spacing: -0.1246875em !important;
+  letter-spacing: -0.038em !important;
+  line-height: 0.92 !important;
 }
 
 /* â”€ Page titles: underline accent, no side border â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
@@ -2136,7 +2082,7 @@ span.label::before {
 /* â”€ Claim numbers: more dramatic scale â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .claim-number {
   font-size: clamp(3.5rem, 6vw, 5.25rem) !important;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.045em;
 }
 
 /* â”€ After-close cards: keep dark, sharpen corners â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
@@ -2405,12 +2351,8 @@ nav.top::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, 
-    transparent 30%, 
-    rgba(34, 197, 94, 0.05) 50%, 
-    transparent 70%);
-  background-size: 200% 200%;
-  animation: wave-fast 45s ease-in-out infinite;
+  background-image: radial-gradient(circle, rgba(13,31,26,0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
   pointer-events: none;
 }
 
@@ -2425,45 +2367,17 @@ nav.top.scrolled {
   background-size: 30px 30px !important;
 }
 .hero-bg::before {
-  background: linear-gradient(135deg, 
-    transparent 25%, 
-    rgba(59, 130, 246, 0.04) 45%,
-    rgba(34, 197, 94, 0.06) 55%, 
-    rgba(52, 211, 153, 0.04) 75%,
-    transparent 85%);
-  background-size: 250% 250%;
-  animation: wave-medium 60s ease-in-out infinite;
-}
-.hero-bg {
-  position: relative;
-}
-.hero-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, 
-    transparent 25%, 
-    rgba(59, 130, 246, 0.04) 45%,
-    rgba(34, 197, 94, 0.06) 55%, 
-    rgba(52, 211, 153, 0.04) 75%,
-    transparent 85%);
-  background-size: 250% 250%;
-  animation: wave-medium 60s ease-in-out infinite;
-  pointer-events: none;
+  background: radial-gradient(ellipse at 40% 40%,
+    rgba(29,138,110,0.10) 0%,
+    rgba(34,160,127,0.05) 40%,
+    transparent 70%
+  ) !important;
 }
 .hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(45deg, 
-    transparent 20%, 
-    rgba(52, 211, 153, 0.06) 40%,
-    rgba(34, 197, 94, 0.08) 50%, 
-    rgba(59, 130, 246, 0.06) 60%,
-    transparent 80%);
-  background-size: 300% 300%;
-  animation: wave-slow 90s ease-in-out infinite;
-  pointer-events: none;
+  background: radial-gradient(ellipse at center,
+    rgba(29,148,116,0.06) 0%,
+    transparent 65%
+  ) !important;
 }
 
 /* â”€â”€ Geometric watermark blob in hero â”€â”€ */
@@ -2672,7 +2586,7 @@ section.page {
 .doodle-hero {
   width: clamp(218px, 18.5vw, 319px);
   right: clamp(4rem, 8vw, 9rem);
-  bottom: calc(1.5rem + 1.25rem + 1.2rem + 1.75rem + 1.15rem + 1.5rem - 22px);
+  bottom: calc(1.5rem + 1.25rem + 1.2rem + 1.75rem + 1.15rem + 1.5rem - 92px);
   z-index: 0;
   pointer-events: none;
 }
@@ -2873,8 +2787,8 @@ h1 em, h2 em, h3 em, h4 em,
 /* Headings: 10% smaller */
 .hero-headline {
   font-size: clamp(2.25rem, 5.85vw, 5.4rem) !important;
-  letter-spacing: -0.091875em !important;
-  line-height: 1.0 !important;
+  letter-spacing: -0.055em !important;
+  line-height: 1.05 !important;
 }
 
 .page-title {
@@ -2885,7 +2799,7 @@ h1 em, h2 em, h3 em, h4 em,
 
 .final-cta-headline {
   font-size: clamp(2.25rem, 5.4vw, 4.5rem) !important;
-  letter-spacing: -0.02734375em !important;
+  letter-spacing: -0.025em !important;
 }
 
 /* Hero subheading: desktop only, slightly wider so it sits on two lines */
@@ -2923,13 +2837,13 @@ h1 em, h2 em, h3 em, h4 em,
   position: absolute !important;
   right: clamp(4rem, 8vw, 9rem) !important;
   width: clamp(218px, 18.5vw, 319px) !important;
-  bottom: calc(1.5rem + 1.25rem + 1.2rem + 1.75rem + 1.15rem + 1.5rem - 146px) !important;
+  bottom: calc(1.5rem + 1.25rem + 1.2rem + 1.75rem + 1.15rem + 1.5rem - 248px) !important;
 }
 
 /* Apps & SaaS positioning near doodle hand */
 .hero-eyebrow {
   position: absolute;
-  top: 88px;
+  top: 99px;
   right: 110px;
   z-index: 10;
   font-family: 'Inter', sans-serif;
@@ -2963,120 +2877,46 @@ h1 em, h2 em, h3 em, h4 em,
 nav.top {
   position: sticky !important;
   top: 0 !important;
-  background: linear-gradient(45deg, 
-    transparent 30%, 
-    rgba(30, 46, 37, 0.08) 50%, 
-    transparent 70%);
-  background-size: 200% 200%;
-  animation: wave 15s ease-in-out infinite;
+  background: #c8e4e7 !important;
   border-bottom: 1px solid transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   box-shadow: none !important;
 }
 nav.top.scrolled {
-  background: linear-gradient(45deg, 
-    transparent 30%, 
-    rgba(30, 46, 37, 0.08) 50%, 
-    transparent 70%);
-  background-size: 200% 200%;
-  animation: wave 15s ease-in-out infinite;
+  background: #c8e4e7 !important;
   box-shadow: none !important;
 }
 .hero {
   background: #c8e4e7 !important;
 }
-.hero::before {
+.hero-bg,
+.hero::before,
+.hero::after {
   opacity: 0 !important;
   pointer-events: none !important;
 }
-.hero-bg {
-  opacity: 1 !important;
-  pointer-events: none !important;
-}
 
-
-/* template-static-overrides */
-:root {
-  --text: var(--ink);
-  --accent: var(--brass);
-}
-
-body.template-shell {
-  min-height: 0;
-  display: block;
-}
-
-body.template-shell nav.top,
-body.template-shell nav.top.scrolled {
-  position: relative !important;
-  top: auto !important;
-}
-
-body.template-shell footer {
-  margin-top: 0;
-}
-
-body.template-shell .scroll-progress,
-body.template-shell .nav-toggle {
-  display: none !important;
-}
-
-@media (max-width: 880px) {
-  body.template-shell nav.top .container {
-    height: auto;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  body.template-shell .nav-links,
-  body.template-shell .nav-links.open {
-    display: flex !important;
-    position: static !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    gap: 1rem !important;
-    padding: 0 !important;
-    border-bottom: 0 !important;
-    background: transparent !important;
-  }
-
-  body.template-shell .nav-links a,
-  body.template-shell .nav-links.open a {
-    width: auto !important;
-    padding: 4px 8px 5px !important;
-    font-size: 13.5px !important;
-    border-bottom: 0 !important;
-  }
-}
-
-@media (max-width: 560px) {
-  body.template-shell .nav-links,
-  body.template-shell .nav-links.open {
-    flex-wrap: wrap;
-  }
-}
 </style>
-<link rel="stylesheet" href="page-overrides.css" />
 </head>
-<body class="template-shell page-home">
+<body>
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
 <nav class="top">
   <div class="container">
-    <a href="https://moeessah.github.io/everis/" class="logo-container" aria-label="Everis" target="_blank" rel="noopener">
+    <a class="logo-container" href="https://moeessah.github.io/everis/" aria-label="Everis home">
   <span class="logo-text">Ever<em class="logo-italic">is</em><span class="logo-period">.</span></span>
-  <img src="file:///C:/Users/maure/Downloads/files(4)/assets/everis%20logo.png" class="logo-image" alt="" aria-hidden="true">
+  <img src="assets/everis%20logo.png" class="logo-image" alt="" aria-hidden="true">
 </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="acquisitions.html" >Acquisitions</a></li>
-      <li><a href="contact.html" >Contact</a></li>
+      <li><a href="acquisitions.html">Acquisitions</a></li>
+      <li><a href="contact.html">Contact</a></li>
       <li><a href="contact.html?reason=sell" class="nav-cta">Sell your business</a></li>
     </ul>
-</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">Menu</button>
+  </div>
 </nav>
 
 <main>
@@ -3334,6 +3174,18 @@ body.template-shell .nav-toggle {
 </footer>
 
 <script>
+  const progress = document.getElementById('scrollProgress');
+  const updateProgress = () => {
+    const h = document.documentElement;
+    const maxScroll = Math.max(h.scrollHeight - h.clientHeight, 1);
+    const scrollTop = window.scrollY || h.scrollTop || document.body.scrollTop || 0;
+    const scrolled = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
+    progress.style.transform = `scaleX(${scrolled})`;
+    progress.style.opacity = scrollTop > 10 ? '0.96' : '0';
+  };
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -3352,6 +3204,19 @@ body.template-shell .nav-toggle {
     });
   }, 0);
 
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    navToggle.textContent = navLinks.classList.contains('open') ? 'Close' : 'Menu';
+  });
+
+  // Nav scroll class
+  const _nav = document.querySelector('nav.top');
+  const _onScroll = () => _nav.classList.toggle('scrolled', window.scrollY > 20);
+  window.addEventListener('scroll', _onScroll, { passive: true });
+  _onScroll();
+
   // Anchor hero doodle to the divider line above hero-ctas (.hero-ctas::before)
   (function() {
     const doodle = document.querySelector('.doodle-hero');
@@ -3366,7 +3231,7 @@ body.template-shell .nav-toggle {
       const beforeStyles = window.getComputedStyle(ctas, '::before');
       const lineOffset = parseFloat(beforeStyles.top); // will be negative (e.g. -18.4)
       
-      doodle.style.setProperty('bottom', (cRect.bottom - (ctasRect.top + lineOffset) + 7) + 'px', 'important');
+      doodle.style.setProperty('bottom', (cRect.bottom - (ctasRect.top + lineOffset) - 15 - 70 + 160 - 60 - 20 + 2 + 1 + 1) + 'px', 'important');
     }
     setTimeout(pin, 50);
     window.addEventListener('resize', pin);
@@ -3385,3 +3250,4 @@ body.template-shell .nav-toggle {
 
 </body>
 </html>
+

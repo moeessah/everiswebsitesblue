@@ -15,7 +15,7 @@
    ======================================================= */
 
 :root {
-  /* Palette â€” Teal Edition */
+  /* Palette — Teal Edition */
   --bone:          #E8F4F2;
   --bone-warm:     #D6EEE9;
   --bone-deep:     #BAE0D8;
@@ -118,7 +118,7 @@ h1, h2, h3, h4 {
   font-family: var(--font-serif);
   font-weight: 400;
   font-variation-settings: 'SOFT' 40, 'opsz' 144;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.025em;
   line-height: 1.03;
   color: var(--ink);
 }
@@ -215,7 +215,7 @@ nav.top .container {
   font-weight: 400;
   font-variation-settings: 'SOFT' 40, 'opsz' 144;
   font-size: 1.5rem;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.025em;
   color: var(--ink);
   line-height: 1;
   display: inline-block;
@@ -423,26 +423,31 @@ nav.top .container {
 .txt-link:hover .arrow { transform: translateX(2px); }
 
 /* =======================================================
-   REVEAL ANIMATIONS
+   REVEAL ANIMATIONS - Updated for mature feel
    ======================================================= */
 
+/* Subtle opacity fade for most elements */
 .reveal {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.9s cubic-bezier(0.22, 0.8, 0.3, 1),
-              transform 0.9s cubic-bezier(0.22, 0.8, 0.3, 1);
+  transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .reveal.in-view {
   opacity: 1;
-  transform: translateY(0);
 }
+
+/* Staggered hero reveals - updated timing */
+.hero .reveal:nth-child(1) { transition-delay: 0s; }
+.hero .reveal:nth-child(2) { transition-delay: 0.15s; }
+.hero .reveal:nth-child(3) { transition-delay: 0.3s; }
+.hero .reveal:nth-child(4) { transition-delay: 0.45s; }
+.hero .reveal:nth-child(5) { transition-delay: 0.6s; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation: none !important;
     transition: none !important;
   }
-  .reveal { opacity: 1; transform: none; }
+  .reveal { opacity: 1; transform: none; filter: none; }
 }
 
 /* =======================================================
@@ -550,7 +555,7 @@ section.page {
   font-size: clamp(1.75rem, 3.5vw, 2.75rem);
   font-weight: 350;
   line-height: 1.05;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.028em;
 }
 
 /* =======================================================
@@ -632,7 +637,7 @@ section.page {
   font-weight: 350;
   font-size: clamp(2.75rem, 5vw, 4.25rem);
   line-height: 1;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.04em;
   color: var(--ink);
   margin-bottom: 0.1rem;
 }
@@ -654,7 +659,7 @@ section.page {
   font-size: clamp(1.2rem, 1.6vw, 1.45rem);
   font-weight: 400;
   line-height: 1.15;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.02em;
   color: var(--ink);
   margin-bottom: 1rem;
   margin-top: 0.4rem;
@@ -714,7 +719,7 @@ section.page {
   font-weight: 350;
   font-size: clamp(2.5rem, 5.5vw, 4rem);
   line-height: 0.95;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.04em;
   color: var(--ink);
 }
 .criteria-number .row { display: block; }
@@ -825,7 +830,7 @@ section.page {
   font-variation-settings: 'SOFT' 70, 'opsz' 144;
   font-size: clamp(1.4rem, 1.9vw, 1.7rem);
   font-weight: 400;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.02em;
   line-height: 1.1;
   color: var(--ink);
   margin-bottom: 0.1rem;
@@ -904,7 +909,7 @@ section.page {
   font-weight: 350;
   font-size: clamp(2.5rem, 6vw, 5rem);
   line-height: 1;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.03em;
   color: var(--bone);
   max-width: 14ch;
   margin-bottom: 2.5rem;
@@ -1036,7 +1041,7 @@ footer {
   font-weight: 300;
   font-size: clamp(5rem, 22vw, 22rem);
   line-height: 0.85;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.05em;
   color: var(--bone);
   display: block;
   text-align: left;
@@ -1165,7 +1170,7 @@ footer {
   font-variation-settings: 'SOFT' 30, 'opsz' 144;
   font-size: clamp(2rem, 3.5vw, 2.8rem);
   font-weight: 350;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.03em;
   line-height: 1;
   color: var(--ink);
   margin-bottom: 0.5rem;
@@ -1210,7 +1215,7 @@ footer {
   font-variation-settings: 'SOFT' 60, 'opsz' 144;
   font-size: clamp(1.35rem, 1.8vw, 1.6rem);
   font-weight: 400;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.02em;
   margin-bottom: 1.25rem;
   color: var(--ink);
   padding-bottom: 0.85rem;
@@ -1294,7 +1299,7 @@ footer {
   font-variation-settings: 'SOFT' 70, 'opsz' 144;
   font-size: 1.5rem;
   font-weight: 400;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.02em;
   line-height: 1.1;
   color: var(--ink);
   margin-bottom: 0.25rem;
@@ -1350,7 +1355,7 @@ footer {
   font-variation-settings: 'SOFT' 60, 'opsz' 144;
   font-size: clamp(1.1rem, 1.4vw, 1.3rem);
   font-weight: 400;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.02em;
   color: var(--ink);
   transition: color 0.2s ease;
   line-height: 1.3;
@@ -1425,10 +1430,10 @@ footer {
 .contact-image {
   position: absolute;
   right: 60px;
-  top: calc(50% + 42px);
-  transform: translateY(-50%);
-  width: 512px;
-  max-width: 48%;
+  top: calc(50% + 122px);
+  transform: translateY(-50%) scale(0.576);
+  width: 320px;
+  max-width: 30%;
   z-index: 3;
 }
 
@@ -1629,12 +1634,12 @@ textarea.form-field {
   .form-row { grid-template-columns: 1fr; }
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   EVERIS â€” REDESIGN
-   Real contrast Â· Visible hierarchy Â· World-class details
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ═══════════════════════════════════════════════════════════════════
+   EVERIS — REDESIGN
+   Real contrast · Visible hierarchy · World-class details
+   ═══════════════════════════════════════════════════════════════════ */
 
-/* â”€â”€ Brass top stripe on nav â”€â”€ */
+/* ── Brass top stripe on nav ── */
 nav.top {
   border-top: none;
   border-bottom-color: rgba(207,195,167,0.45);
@@ -1646,13 +1651,13 @@ nav.top.scrolled {
   box-shadow: 0 2px 0 var(--brass), 0 12px 48px -8px rgba(15,24,20,0.12);
 }
 
-/* â”€â”€ Page section titles: brass left accent â”€â”€ */
+/* ── Page section titles: brass left accent ── */
 .page-title {
   border-left: 3px solid var(--brass);
   padding-left: 1.5rem;
 }
 
-/* â”€â”€ Section labels: short dash ornament â”€â”€ */
+/* ── Section labels: short dash ornament ── */
 span.label {
   display: inline-flex;
   align-items: center;
@@ -1668,7 +1673,7 @@ span.label::before {
   flex-shrink: 0;
 }
 
-/* â”€â”€ HERO: warm luminance behind headline â”€â”€ */
+/* ── HERO: warm luminance behind headline ── */
 .hero { overflow: hidden; }
 
 /* Reduce contact page hero bottom spacing by 150px */
@@ -1701,16 +1706,16 @@ body:not(.index-page):not(.acquisitions-page) #form.page {
   z-index: -1;
 }
 
-/* â”€â”€ Staggered hero reveals â”€â”€ */
+/* ── Staggered hero reveals ── */
 .hero .reveal:nth-child(1) { transition-delay: 0s; }
 .hero .reveal:nth-child(2) { transition-delay: 0.09s; }
 .hero .reveal:nth-child(3) { transition-delay: 0.18s; }
 .hero .reveal:nth-child(4) { transition-delay: 0.27s; }
 .hero .reveal:nth-child(5) { transition-delay: 0.36s; }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   WHY FOUNDERS â€” Dark dramatic section
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ══════════════════════════════════════════════════════
+   WHY FOUNDERS — Dark dramatic section
+   ══════════════════════════════════════════════════════ */
 .why-founders {
   background: var(--forest);
   color: var(--bone);
@@ -1743,9 +1748,9 @@ body:not(.index-page):not(.acquisitions-page) #form.page {
 .why-founders .claim-phrase em { color: var(--brass); }
 .why-founders .claim-body { color: rgba(239,233,219,0.62); }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   AFTER-CLOSE CARDS â€” Dark premium
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ══════════════════════════════════════════════════════
+   AFTER-CLOSE CARDS — Dark premium
+   ══════════════════════════════════════════════════════ */
 .after-card {
   background: var(--forest);
   color: var(--bone);
@@ -1773,9 +1778,9 @@ body:not(.index-page):not(.acquisitions-page) #form.page {
 .after-card .after-title { color: var(--bone); }
 .after-card .after-body { color: rgba(239,233,219,0.65); }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   PROCESS STEPS â€” Watermark index numbers
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ══════════════════════════════════════════════════════
+   PROCESS STEPS — Watermark index numbers
+   ══════════════════════════════════════════════════════ */
 .process-step {
   position: relative;
   transition: border-top-color 0.4s cubic-bezier(0.22,0.8,0.3,1);
@@ -1802,23 +1807,23 @@ body:not(.index-page):not(.acquisitions-page) #form.page {
 }
 .process-step > * { position: relative; z-index: 1; }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ══════════════════════════════════════════════════════
    CLAIMS
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   ══════════════════════════════════════════════════════ */
 .claim {
   transition: border-top-color 0.4s cubic-bezier(0.22,0.8,0.3,1);
 }
 .claim:hover { border-top-color: var(--brass); }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ══════════════════════════════════════════════════════
    CRITERIA COLS
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   ══════════════════════════════════════════════════════ */
 .criteria-col h3 { transition: border-bottom-color 0.35s ease; }
 .criteria-col:hover h3 { border-bottom-color: var(--brass); }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   FAQ â€” Accordion
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ══════════════════════════════════════════════════════
+   FAQ — Accordion
+   ══════════════════════════════════════════════════════ */
 .faq-qa { gap: 0; }
 .faq-a {
   max-height: 0;
@@ -1857,9 +1862,9 @@ body:not(.index-page):not(.acquisitions-page) #form.page {
 }
 .faq-item.open .faq-q { color: var(--brass); }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   CONTACT FORM â€” White inputs
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ══════════════════════════════════════════════════════
+   CONTACT FORM — White inputs
+   ══════════════════════════════════════════════════════ */
 .form-field {
   background: #ffffff;
   border-color: rgba(207,195,167,0.7);
@@ -1874,7 +1879,7 @@ body:not(.index-page):not(.acquisitions-page) #form.page {
 }
 .form-field::placeholder { color: rgba(95,109,100,0.55); }
 
-/* â”€â”€ Routing options: white â”€â”€ */
+/* ── Routing options: white ── */
 .routing-option { display: flex; }
 .routing-option label {
   background: #ffffff;
@@ -1888,9 +1893,9 @@ body:not(.index-page):not(.acquisitions-page) #form.page {
   border-color: var(--ink-soft);
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   FOUNDER PHOTOS â€” Bottom depth gradient
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ══════════════════════════════════════════════════════
+   FOUNDER PHOTOS — Bottom depth gradient
+   ══════════════════════════════════════════════════════ */
 .founder-photo {
   box-shadow: 0 8px 32px -8px rgba(15,24,20,0.25);
 }
@@ -1906,9 +1911,9 @@ body:not(.index-page):not(.acquisitions-page) #form.page {
 }
 .founder-card:hover .founder-photo::before { opacity: 0; }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ══════════════════════════════════════════════════════
    BUTTONS
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   ══════════════════════════════════════════════════════ */
 .btn-primary:hover {
   box-shadow: 0 8px 28px -8px rgba(29,138,110,0.45), 0 2px 8px -4px rgba(29,138,110,0.2);
 }
@@ -1916,17 +1921,17 @@ body:not(.index-page):not(.acquisitions-page) #form.page {
   box-shadow: 0 6px 20px -6px rgba(29,138,110,0.5) !important;
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   SCROLL PROGRESS â€” Glow
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ══════════════════════════════════════════════════════
+   SCROLL PROGRESS — Glow
+   ══════════════════════════════════════════════════════ */
 .scroll-progress {
   box-shadow: 3px 0 14px rgba(29,138,110,0.5);
   border-radius: 0 2px 2px 0;
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   FINAL CTA â€” Richer atmosphere
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ══════════════════════════════════════════════════════
+   FINAL CTA — Richer atmosphere
+   ══════════════════════════════════════════════════════ */
 .final-cta::before {
   content: '';
   position: absolute;
@@ -1938,9 +1943,9 @@ body:not(.index-page):not(.acquisitions-page) #form.page {
   z-index: 1;
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   FOOTER WORDMARK â€” Fixed small size + fade
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ══════════════════════════════════════════════════════
+   FOOTER WORDMARK — Fixed small size + fade
+   ══════════════════════════════════════════════════════ */
 .wordmark-giant {
   font-size: 150px !important;
   letter-spacing: -0.06em;
@@ -1951,12 +1956,12 @@ body:not(.index-page):not(.acquisitions-page) #form.page {
 }
 
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   EVERIS â€” ELEVATED REDESIGN  |  Warm Modernist Editorial
+/* ═══════════════════════════════════════════════════════════════════
+   EVERIS — ELEVATED REDESIGN  |  Warm Modernist Editorial
    Lead-designer-grade overrides.
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   ═══════════════════════════════════════════════════════════════════ */
 
-/* â”€ Palette refinements â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Palette refinements ──────────────────────────────────────────── */
 :root {
   --bone:          #FAF8F4;
   --bone-warm:     #F2E9D4;
@@ -1971,16 +1976,16 @@ body:not(.index-page):not(.acquisitions-page) #form.page {
 
 body { background: var(--surf-hero); }
 
-/* â”€ Buttons: refined, not pill â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Buttons: refined, not pill ──────────────────────────────────── */
 .btn { border-radius: 5px !important; }
 .nav-cta { border-radius: 5px !important; }
 
-/* â”€ Nav refinement â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Nav refinement ──────────────────────────────────────────────── */
 nav.top.scrolled {
   box-shadow: 0 1px 0 var(--brass), 0 10px 40px -8px rgba(15,24,20,0.1) !important;
 }
 
-/* â”€ Hero: animated warm-orb background â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Hero: animated warm-orb background ─────────────────────────── */
 
 /* Kill the old static radial glow */
 .hero::after { display: none !important; }
@@ -1996,51 +2001,9 @@ nav.top.scrolled {
   background-size: 30px 30px;
 }
 
-/* Large warm amber orb â€“ top-right */
-.hero-bg::before {
-  content: '';
-  position: absolute;
-  width: 62%;
-  height: 140%;
-  right: -8%;
-  top: -25%;
-  background: radial-gradient(ellipse at 40% 40%,
-    rgba(29,138,110,0.11) 0%,
-    rgba(239,215,160,0.06) 45%,
-    transparent 70%
-  );
-  filter: blur(55px);
-  border-radius: 62% 38% 55% 45% / 42% 55% 45% 58%;
-  animation: orb-a 22s ease-in-out infinite alternate;
-}
-
-/* Softer cream orb â€“ bottom-left */
+.hero-bg::before,
 .hero-bg::after {
-  content: '';
-  position: absolute;
-  width: 50%;
-  height: 90%;
-  left: -6%;
-  bottom: -15%;
-  background: radial-gradient(ellipse at center,
-    rgba(184,140,50,0.07) 0%,
-    transparent 65%
-  );
-  filter: blur(70px);
-  border-radius: 50%;
-  animation: orb-b 28s ease-in-out infinite alternate;
-}
-
-@keyframes orb-a {
-  0%   { transform: translate(0,   0  ) scale(1.00); opacity: 0.75; }
-  40%  { transform: translate(-3%, 5% ) scale(1.05); opacity: 1.00; }
-  100% { transform: translate(2%, -4% ) scale(0.96); opacity: 0.80; }
-}
-
-@keyframes orb-b {
-  0%   { transform: translate(0, 0  ) scale(1.00); opacity: 0.65; }
-  60%  { transform: translate(5%, -5%) scale(1.08); opacity: 0.95; }
-  100% { transform: translate(-3%, 3%) scale(0.93); opacity: 0.70; }
+  display: none !important;
 }
 
 /* Hero container above everything */
@@ -2049,10 +2012,10 @@ nav.top.scrolled {
 /* Hero headline: a touch larger */
 .hero-headline {
   max-width: 15ch !important;
-  letter-spacing: -0.2296875em !important;
+  letter-spacing: -0.038em !important;
 }
 
-/* â”€ Page titles: underline accent, no side border â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Page titles: underline accent, no side border ───────────────── */
 .page-title {
   border-left: none !important;
   padding-left: 0 !important;
@@ -2066,13 +2029,13 @@ nav.top.scrolled {
   margin-top: 0.8rem;
 }
 
-/* â”€ Section labels: slightly longer dash â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Section labels: slightly longer dash ───────────────────────── */
 span.label::before {
   width: 20px !important;
   height: 1.5px !important;
 }
 
-/* â”€ Why Founders: warm-sand, NOT dark â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Why Founders: warm-sand, NOT dark ──────────────────────────── */
 .why-founders {
   background: var(--section-accent-bg) !important;
   color: var(--ink) !important;
@@ -2120,19 +2083,19 @@ span.label::before {
 .why-founders .claim-phrase em  { color: var(--brass) !important;       }
 .why-founders .claim-body       { color: var(--ink-soft) !important;    }
 
-/* â”€ Claim numbers: more dramatic scale â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Claim numbers: more dramatic scale ─────────────────────────── */
 .claim-number {
   font-size: clamp(3.5rem, 6vw, 5.25rem) !important;
-  letter-spacing: -0.091875em;
+  letter-spacing: -0.045em;
 }
 
-/* â”€ After-close cards: keep dark, sharpen corners â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ After-close cards: keep dark, sharpen corners ──────────────── */
 .after-card { border-radius: 4px !important; }
 .after-card::before {
   background: linear-gradient(90deg, var(--brass), rgba(29,138,110,0.15)) !important;
 }
 
-/* â”€ Founder photos â†’ perfect circles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Founder photos → perfect circles ───────────────────────────── */
 .founder-photo {
   border-radius: 50% !important;
   aspect-ratio: 1 / 1 !important;
@@ -2149,7 +2112,7 @@ span.label::before {
   align-items: center !important;
 }
 
-/* â”€ Criteria list bullets â†’ dashes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Criteria list bullets → dashes ─────────────────────────────── */
 .criteria-col li::before {
   border-radius: 0 !important;
   width: 10px !important;
@@ -2167,37 +2130,37 @@ span.label::before {
   opacity: 0.45;
 }
 
-/* â”€ "Outside that range" paragraph: single line â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ "Outside that range" paragraph: single line ────────────────── */
 .criteria-body p:nth-child(2),
 .criteria-body p + p {
   max-width: none !important;
 }
 
-/* â”€ Criteria section visual: tighter body â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Criteria section visual: tighter body ──────────────────────── */
 .criteria-body p { max-width: 52ch; }
 
-/* â”€ FAQ indicator: dash not default â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ FAQ indicator: dash not default ────────────────────────────── */
 .faq-num {
   font-variant-numeric: tabular-nums;
 }
 
-/* â”€ Process step watermark: bolder opacity â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Process step watermark: bolder opacity ─────────────────────── */
 .process-step::after {
   opacity: 0.055 !important;
 }
 
-/* â”€ Hero signature: soft separator â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Hero signature: soft separator ─────────────────────────────── */
 .hero-signature {
   border-top-color: rgba(15,24,20,0.09) !important;
 }
 
-/* â”€ Scroll progress: slightly thicker â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Scroll progress: slightly thicker ──────────────────────────── */
 .scroll-progress {
   height: 3px !important;
   box-shadow: 2px 0 16px rgba(29,138,110,0.5) !important;
 }
 
-/* â”€ Final CTA: subtle geometric accent â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Final CTA: subtle geometric accent ─────────────────────────── */
 .final-cta {
   position: relative;
   overflow: hidden;
@@ -2214,29 +2177,29 @@ span.label::before {
 }
 .final-cta .container { z-index: 2; }
 
-/* â”€ Why founders: no dark .claim overrides needed (light section) â”€ */
+/* ─ Why founders: no dark .claim overrides needed (light section) ─ */
 /* Re-enable default border color for dark-mode toggle */
 .why-founders .claim-grid { position: relative; z-index: 1; }
 
-/* â”€ Footer wordmark fade â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Footer wordmark fade ────────────────────────────────────────── */
 .wordmark-giant {
   font-size: 130px !important;
   letter-spacing: -0.06em;
 }
 
-/* â”€ Page title: acquisitions-specific â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Page title: acquisitions-specific ──────────────────────────── */
 .criteria-section .page-title::after,
 .faq-section .page-title::after {
   background: var(--brass);
 }
 
-/* â”€ Contact form: input focus ring â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Contact form: input focus ring ─────────────────────────────── */
 .form-field:focus {
   border-color: var(--brass) !important;
   box-shadow: 0 0 0 3px rgba(29,138,110,0.12) !important;
 }
 
-/* â”€ Routing option selected: brass accent â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Routing option selected: brass accent ──────────────────────── */
 .routing-option input:checked + label {
   border-color: var(--brass) !important;
   background: rgba(29,138,110,0.08) !important;
@@ -2249,13 +2212,13 @@ span.label::before {
   border-color: var(--brass-bright) !important;
 }
 
-/* â”€ Reduced motion: respect preferences â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Reduced motion: respect preferences ────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .hero-bg::before,
   .hero-bg::after { animation: none !important; }
 }
 
-/* â”€ Force disable ALL logo animations and transitions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─ Force disable ALL logo animations and transitions ───────────── */
 nav.top .wordmark,
 nav.top .wordmark *,
 nav.top .wordmark:hover,
@@ -2303,7 +2266,7 @@ a.wordmark img:focus-visible {
   rotate: 0 !important;
 }
 
-/* â”€â”€ Clean Logo Styling â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Clean Logo Styling ───────────────────────────────────────────── */
 .logo-container,
 .logo-container *,
 .logo-container::before,
@@ -2372,7 +2335,7 @@ a.wordmark img:focus-visible {
   transition: none !important;
 }
 
-/* â”€â”€ Teal theme: nav, buttons, form, CTA â”€â”€ */
+/* ── Teal theme: nav, buttons, form, CTA ── */
 nav.top {
   background: linear-gradient(160deg, var(--surf-hero) 0%, #dff0ee 100%) !important;
   border-top: none !important;
@@ -2467,9 +2430,9 @@ footer {
   background: linear-gradient(180deg, #d6ecf2 0%, #cce6ee 100%) !important;
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ═══════════════════════════════════════════════════════════════════
    NEUE HAAS GROTESK + NAV LOGOMARK
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   ═══════════════════════════════════════════════════════════════════ */
 :root {
   --font-display: 'NeueHaasGroteskDisplayPro', 'Neue Haas Grotesk Display Pro', 'Helvetica Neue', Arial, sans-serif;
 }
@@ -2484,7 +2447,7 @@ h1, h2, h3, h4,
   font-family: var(--font-display) !important;
   font-weight: 700 !important;
   font-variation-settings: normal !important;
-  letter-spacing: -0.2296875em !important;
+  letter-spacing: -0.018em !important;
 }
 
 h1 em, h2 em, h3 em, h4 em,
@@ -2499,19 +2462,19 @@ h1 em, h2 em, h3 em, h4 em,
 
 .hero-headline {
   font-size: clamp(2.25rem, 5.85vw, 5.4rem) !important;
-  letter-spacing: -0.2296875em !important;
-  line-height: 1.0 !important;
+  letter-spacing: -0.055em !important;
+  line-height: 1.05 !important;
 }
 
 .page-title {
   font-size: clamp(1.575rem, 3.15vw, 2.475rem) !important;
-  letter-spacing: -0.2296875em !important;
+  letter-spacing: -0.018em !important;
   line-height: 1.05 !important;
 }
 
 .final-cta-headline {
   font-size: clamp(2.25rem, 5.4vw, 4.5rem) !important;
-  letter-spacing: -0.2296875em !important;
+  letter-spacing: -0.025em !important;
 }
 
 .hero-sub {
@@ -2535,7 +2498,7 @@ h1 em, h2 em, h3 em, h4 em,
   transition: none !important;
 }
 
-/* â”€â”€ SEAMLESS NAV + SOLID HERO â”€â”€ */
+/* ── SEAMLESS NAV + SOLID HERO ── */
 :root {
   --hero-surface: #C8E8E2;
 }
@@ -2543,13 +2506,15 @@ nav.top {
   position: sticky !important;
   top: 0 !important;
   background: #d8e8ef !important;
+  border-top: none !important;
   border-bottom: 1px solid transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   box-shadow: none !important;
+  transition: background 0.4s ease !important;
 }
 nav.top.scrolled {
-  background: #d8e8ef !important;
+  background: rgba(216,232,239,0.98) !important;
   box-shadow: none !important;
 }
 .hero {
@@ -2562,88 +2527,26 @@ nav.top.scrolled {
   pointer-events: none !important;
 }
 
-
-/* template-static-overrides */
-:root {
-  --text: var(--ink);
-  --accent: var(--brass);
-}
-
-body.template-shell {
-  min-height: 0;
-  display: block;
-}
-
-body.template-shell nav.top,
-body.template-shell nav.top.scrolled {
-  position: relative !important;
-  top: auto !important;
-}
-
-body.template-shell footer {
-  margin-top: 0;
-}
-
-body.template-shell .scroll-progress,
-body.template-shell .nav-toggle {
-  display: none !important;
-}
-
-@media (max-width: 880px) {
-  body.template-shell nav.top .container {
-    height: auto;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  body.template-shell .nav-links,
-  body.template-shell .nav-links.open {
-    display: flex !important;
-    position: static !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    gap: 1rem !important;
-    padding: 0 !important;
-    border-bottom: 0 !important;
-    background: transparent !important;
-  }
-
-  body.template-shell .nav-links a,
-  body.template-shell .nav-links.open a {
-    width: auto !important;
-    padding: 4px 8px 5px !important;
-    font-size: 13.5px !important;
-    border-bottom: 0 !important;
-  }
-}
-
-@media (max-width: 560px) {
-  body.template-shell .nav-links,
-  body.template-shell .nav-links.open {
-    flex-wrap: wrap;
-  }
-}
 </style>
-<link rel="stylesheet" href="page-overrides.css" />
 </head>
-<body class="template-shell page-contact">
+<body>
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
 <nav class="top">
   <div class="container">
-    <a href="https://moeessah.github.io/everis/" class="logo-container" aria-label="Everis" target="_blank" rel="noopener">
+    <a class="logo-container" href="https://moeessah.github.io/everis/" aria-label="Everis home">
   <span class="logo-text">Ever<em class="logo-italic">is</em><span class="logo-period">.</span></span>
-  <img src="file:///C:/Users/maure/Downloads/files(4)/assets/everis%20logo.png" class="logo-image" alt="" aria-hidden="true">
+  <img src="assets/everis%20logo.png" class="logo-image" alt="" aria-hidden="true">
 </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html" >Home</a></li>
-      <li><a href="acquisitions.html" >Acquisitions</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="acquisitions.html">Acquisitions</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
       <li><a href="contact.html?reason=sell" class="nav-cta">Sell your business</a></li>
     </ul>
-</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">Menu</button>
+  </div>
 </nav>
 
 <main>
@@ -2816,6 +2719,18 @@ body.template-shell .nav-toggle {
 </footer>
 
 <script>
+  const progress = document.getElementById('scrollProgress');
+  const updateProgress = () => {
+    const h = document.documentElement;
+    const maxScroll = Math.max(h.scrollHeight - h.clientHeight, 1);
+    const scrollTop = window.scrollY || h.scrollTop || document.body.scrollTop || 0;
+    const scrolled = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
+    progress.style.transform = `scaleX(${scrolled})`;
+    progress.style.opacity = scrollTop > 10 ? '0.96' : '0';
+  };
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -2833,6 +2748,13 @@ body.template-shell .nav-toggle {
       if (r.top < window.innerHeight + 100) el.classList.add('in-view');
     });
   }, 0);
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    navToggle.textContent = navLinks.classList.contains('open') ? 'Close' : 'Menu';
+  });
 
   const params = new URLSearchParams(window.location.search);
   const reason = params.get('reason');
@@ -2857,7 +2779,12 @@ body.template-shell .nav-toggle {
     }, 800);
   });
 
-  </script>
+  // Nav scroll class
+  const _nav = document.querySelector('nav.top');
+  const _onScroll = () => _nav.classList.toggle('scrolled', window.scrollY > 20);
+  window.addEventListener('scroll', _onScroll, { passive: true });
+  _onScroll();
+</script>
 
 </body>
 </html>
