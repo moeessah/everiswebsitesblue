@@ -431,7 +431,7 @@ nav.top .container {
 /* Subtle opacity fade for most elements */
 .reveal {
   opacity: 0;
-  transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .reveal.in-view {
   opacity: 1;
@@ -442,9 +442,9 @@ nav.top .container {
   opacity: 0;
   transform: translateY(20px);
   filter: blur(1px);
-  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              filter 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              filter 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .hero-eyebrow.reveal.in-view {
   opacity: 1;
@@ -454,10 +454,10 @@ nav.top .container {
 
 /* Staggered hero reveals - updated timing */
 .hero .reveal:nth-child(1) { transition-delay: 0s; }
-.hero .reveal:nth-child(2) { transition-delay: 0.15s; }
-.hero .reveal:nth-child(3) { transition-delay: 0.3s; }
-.hero .reveal:nth-child(4) { transition-delay: 0.45s; }
-.hero .reveal:nth-child(5) { transition-delay: 0.6s; }
+.hero .reveal:nth-child(2) { transition-delay: 0.08s; }
+.hero .reveal:nth-child(3) { transition-delay: 0.16s; }
+.hero .reveal:nth-child(4) { transition-delay: 0.24s; }
+.hero .reveal:nth-child(5) { transition-delay: 0.32s; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
