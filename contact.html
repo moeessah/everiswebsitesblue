@@ -219,6 +219,408 @@ nav .container {
   cursor: pointer;
 }
 
+/* Premium Atmospheric Cloud System */
+.clouds-container {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.cloud-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.cloud {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(1px);
+  transition: transform 0.3s ease;
+  box-shadow: none;
+}
+
+/* Background Haze Layer */
+.cloud-layer-1 {
+  z-index: 5;
+}
+
+.cloud-layer-1 .cloud-1 {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url('clouds/background cloud make low opacity.png');
+  opacity: 0.154;
+  animation: cloud-1-1 65s linear infinite;
+}
+
+/* Wispy Horizontal Clouds */
+.cloud-layer-2 {
+  z-index: 10;
+}
+
+.cloud-layer-2 .cloud-1 {
+  width: 450px;
+  height: 180px;
+  top: 5%;
+  left: -20%;
+  background-image: url('clouds/cropped 2.png');
+  opacity: 0.266;
+  animation: cloud-2-1 58.5s linear infinite;
+}
+
+.cloud-layer-2 .cloud-2 {
+  width: 250px;
+  height: 100px;
+  top: 18%;
+  left: 10%;
+  background-image: url('clouds/cropped 4.png');
+  opacity: 0.298;
+  animation: cloud-2-2 61.75s linear infinite;
+  z-index: 600;
+}
+
+.cloud-layer-2 .cloud-3 {
+  width: 280px;
+  height: 110px;
+  top: 2%;
+  left: 40%;
+  background-image: url('clouds/cropped 6.png');
+  opacity: 0.338;
+  animation: cloud-2-3 55.25s linear infinite;
+}
+
+.cloud-layer-2 .cloud-4 {
+  width: 320px;
+  height: 130px;
+  top: 22%;
+  left: 70%;
+  background-image: url('clouds/cropped 8.png');
+  opacity: 0.37;
+  animation: cloud-2-4 52s linear infinite;
+}
+
+/* Duplicate clouds for continuous coverage */
+.cloud-layer-2 .cloud-1-duplicate {
+  width: 450px;
+  height: 180px;
+  top: 5%;
+  left: -20%;
+  background-image: url('clouds/cropped 2.png');
+  opacity: 0.266;
+  animation: cloud-2-1 58.5s linear infinite;
+  animation-delay: 29.25s;
+}
+
+.cloud-layer-2 .cloud-2-duplicate {
+  width: 250px;
+  height: 100px;
+  top: 18%;
+  left: 10%;
+  background-image: url('clouds/cropped 4.png');
+  opacity: 0.298;
+  animation: cloud-2-2 61.75s linear infinite;
+  animation-delay: 30.875s;
+  z-index: 600;
+}
+
+.cloud-layer-2 .cloud-3-duplicate {
+  width: 280px;
+  height: 110px;
+  top: 2%;
+  left: 40%;
+  background-image: url('clouds/cropped 6.png');
+  opacity: 0.338;
+  animation: cloud-2-3 55.25s linear infinite;
+  animation-delay: 27.625s;
+}
+
+.cloud-layer-2 .cloud-4-duplicate {
+  width: 320px;
+  height: 130px;
+  top: 22%;
+  left: 70%;
+  background-image: url('clouds/cropped 8.png');
+  opacity: 0.37;
+  animation: cloud-2-4 52s linear infinite;
+  animation-delay: 26s;
+}
+
+/* Midground Clouds */
+.cloud-layer-3 {
+  z-index: 15;
+}
+
+.cloud-layer-3 .cloud-1 {
+  width: 600px;
+  height: 240px;
+  top: 18%;
+  left: -15%;
+  background-image: url('clouds/cropped 11 grey blue shadow.png');
+  opacity: 0.418;
+  animation: cloud-3-1 48.75s linear infinite;
+}
+
+.cloud-layer-3 .cloud-2 {
+  width: 350px;
+  height: 140px;
+  top: 35%;
+  left: 35%;
+  background-image: url('clouds/cropped blue shadow 9.png');
+  opacity: 0.418;
+  animation: cloud-3-2 52s linear infinite;
+}
+
+.cloud-layer-3 .cloud-3 {
+  width: 280px;
+  height: 112px;
+  top: 45%;
+  left: 70%;
+  background-image: url('clouds/cropped 7.png');
+  opacity: 0.362;
+  animation: cloud-3-3 50.375s linear infinite;
+}
+
+/* Duplicate clouds for continuous coverage */
+.cloud-layer-3 .cloud-1-duplicate {
+  width: 600px;
+  height: 240px;
+  top: 18%;
+  left: -15%;
+  background-image: url('clouds/cropped 11 grey blue shadow.png');
+  opacity: 0.418;
+  animation: cloud-3-1 48.75s linear infinite;
+  animation-delay: 24.375s;
+}
+
+.cloud-layer-3 .cloud-2-duplicate {
+  width: 350px;
+  height: 140px;
+  top: 35%;
+  left: 35%;
+  background-image: url('clouds/cropped blue shadow 9.png');
+  opacity: 0.418;
+  animation: cloud-3-2 52s linear infinite;
+  animation-delay: 26s;
+}
+
+.cloud-layer-3 .cloud-3-duplicate {
+  width: 280px;
+  height: 112px;
+  top: 45%;
+  left: 70%;
+  background-image: url('clouds/cropped 7.png');
+  opacity: 0.362;
+  animation: cloud-3-3 50.375s linear infinite;
+  animation-delay: 25.1875s;
+}
+
+/* Main Hero Cloud */
+.cloud-layer-4 {
+  z-index: 18;
+}
+
+.cloud-layer-4 .cloud-1 {
+  width: 450px;
+  height: 180px;
+  top: 38%;
+  left: 20%;
+  background-image: url('clouds/cropped 12 blue shadow.png');
+  opacity: 0.474;
+  animation: cloud-4-1 45.5s linear infinite;
+}
+
+/* Tiny Accent Wisps - Front Layer */
+.cloud-layer-5 {
+  z-index: 500;
+}
+
+.cloud-layer-5 .cloud-1 {
+  width: 450px;
+  height: 180px;
+  top: 55%;
+  left: -25%;
+  background-image: url('clouds/clouds mini cluster.png');
+  opacity: 0.346;
+  animation: cloud-5-1 39s linear infinite;
+}
+
+.cloud-layer-5 .cloud-2 {
+  width: 120px;
+  height: 50px;
+  top: 65%;
+  left: 25%;
+  background-image: url('clouds/cropped 3.png');
+  opacity: 0.354;
+  animation: cloud-5-2 42.25s linear infinite;
+}
+
+.cloud-layer-5 .cloud-3 {
+  width: 100px;
+  height: 40px;
+  top: 58%;
+  left: 60%;
+  background-image: url('clouds/cropped 5.png');
+  opacity: 0.418;
+  animation: cloud-5-3 42.9s linear infinite;
+}
+
+/* Duplicate clouds for continuous coverage */
+.cloud-layer-5 .cloud-1-duplicate {
+  width: 450px;
+  height: 180px;
+  top: 55%;
+  left: -25%;
+  background-image: url('clouds/clouds mini cluster.png');
+  opacity: 0.346;
+  animation: cloud-5-1 39s linear infinite;
+  animation-delay: 19.5s;
+}
+
+.cloud-layer-5 .cloud-2-duplicate {
+  width: 120px;
+  height: 50px;
+  top: 65%;
+  left: 25%;
+  background-image: url('clouds/cropped 3.png');
+  opacity: 0.354;
+  animation: cloud-5-2 42.25s linear infinite;
+  animation-delay: 21.125s;
+}
+
+.cloud-layer-5 .cloud-3-duplicate {
+  width: 100px;
+  height: 40px;
+  top: 58%;
+  left: 60%;
+  background-image: url('clouds/cropped 5.png');
+  opacity: 0.418;
+  animation: cloud-5-3 42.9s linear infinite;
+  animation-delay: 21.45s;
+}
+
+/* Custom Cloud Keyframes - Overlapping Seamless Flow */
+@keyframes cloud-1-1 {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  100% {
+    transform: translateX(120vw) translateY(0) scale(1);
+  }
+}
+
+@keyframes cloud-2-1 {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  100% {
+    transform: translateX(145vw) translateY(0) scale(1);
+  }
+}
+
+@keyframes cloud-2-2 {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  100% {
+    transform: translateX(135vw) translateY(0) scale(1);
+  }
+}
+
+@keyframes cloud-2-3 {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  100% {
+    transform: translateX(125vw) translateY(0) scale(1);
+  }
+}
+
+@keyframes cloud-2-4 {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  100% {
+    transform: translateX(115vw) translateY(0) scale(1);
+  }
+}
+
+@keyframes cloud-3-1 {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  100% {
+    transform: translateX(145vw) translateY(0) scale(1);
+  }
+}
+
+@keyframes cloud-3-2 {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  100% {
+    transform: translateX(120vw) translateY(0) scale(1);
+  }
+}
+
+@keyframes cloud-3-3 {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  100% {
+    transform: translateX(105vw) translateY(0) scale(1);
+  }
+}
+
+@keyframes cloud-4-1 {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  100% {
+    transform: translateX(135vw) translateY(0) scale(1);
+  }
+}
+
+@keyframes cloud-5-1 {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  100% {
+    transform: translateX(160vw) translateY(0) scale(1);
+  }
+}
+
+@keyframes cloud-5-2 {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  100% {
+    transform: translateX(140vw) translateY(0) scale(1);
+  }
+}
+
+@keyframes cloud-5-3 {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  100% {
+    transform: translateX(125vw) translateY(0) scale(1);
+  }
+}
+
+@keyframes heroGlow {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
 /* Hero Section */
 .hero {
   min-height: 70vh;
@@ -291,6 +693,8 @@ nav .container {
   max-width: 700px;
   text-align: center;
   margin: 0 auto;
+  position: relative;
+  z-index: 100;
 }
 
 .hero-eyebrow {
@@ -1251,6 +1655,55 @@ footer {
   <!-- Hero Section -->
   <section class="hero">
   <div class="hero-bg"></div>
+  
+  <!-- Premium Atmospheric Cloud System -->
+  <div class="clouds-container">
+    <!-- Background Haze Layer -->
+    <div class="cloud-layer cloud-layer-1">
+      <div class="cloud cloud-1"></div>
+    </div>
+    
+    <!-- Wispy Horizontal Clouds -->
+    <div class="cloud-layer cloud-layer-2">
+      <div class="cloud cloud-1"></div>
+      <div class="cloud cloud-2"></div>
+      <div class="cloud cloud-3"></div>
+      <div class="cloud cloud-4"></div>
+      <!-- Duplicates for continuous coverage -->
+      <div class="cloud cloud-1-duplicate"></div>
+      <div class="cloud cloud-2-duplicate"></div>
+      <div class="cloud cloud-3-duplicate"></div>
+      <div class="cloud cloud-4-duplicate"></div>
+    </div>
+    
+    <!-- Midground Clouds -->
+    <div class="cloud-layer cloud-layer-3">
+      <div class="cloud cloud-1"></div>
+      <div class="cloud cloud-2"></div>
+      <div class="cloud cloud-3"></div>
+      <!-- Duplicates for continuous coverage -->
+      <div class="cloud cloud-1-duplicate"></div>
+      <div class="cloud cloud-2-duplicate"></div>
+      <div class="cloud cloud-3-duplicate"></div>
+    </div>
+    
+    <!-- Main Hero Cloud -->
+    <div class="cloud-layer cloud-layer-4">
+      <div class="cloud cloud-1"></div>
+    </div>
+    
+    <!-- Tiny Accent Wisps -->
+    <div class="cloud-layer cloud-layer-5">
+      <div class="cloud cloud-1"></div>
+      <div class="cloud cloud-2"></div>
+      <div class="cloud cloud-3"></div>
+      <!-- Duplicates for continuous coverage -->
+      <div class="cloud cloud-1-duplicate"></div>
+      <div class="cloud cloud-2-duplicate"></div>
+      <div class="cloud cloud-3-duplicate"></div>
+    </div>
+  </div>
+  
     <div class="container">
       <div class="hero-content">
         <div class="hero-eyebrow">Get In Touch</div>
